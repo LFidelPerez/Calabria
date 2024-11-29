@@ -13,6 +13,7 @@ namespace Calabria
 	public partial class frmMain : Form
 	{
 		private readonly SpreadSheetConnector sheetConnector;
+		private frmStock _frmStock;
 
 		public frmMain()
 		{
@@ -21,6 +22,12 @@ namespace Calabria
 		}
 
 		private void Button1_Click(object sender, EventArgs e)
+		{
+			_frmStock = new frmStock();	
+			_frmStock.ShowDialog();
+		}
+
+		public void AddTestData()
 		{
 			try
 			{
@@ -59,6 +66,10 @@ namespace Calabria
 
 				throw ex;
 			}
+		}
+
+		private void frmMain_Load(object sender, EventArgs e)
+		{
 
 		}
 	}

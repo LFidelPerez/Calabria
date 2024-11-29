@@ -17,6 +17,14 @@ namespace Calabria
 		private string _spreadsheetId = "1UaUcWbk_aMYG05KZJdu3ZiztWiNfxfZ6hh14skKKF7k";
 		private SheetsService _sheetsService;
 
+		public SpreadSheetConnector() { }
+		public SpreadSheetConnector(string applicationName, string spreadsheetId, SheetsService sheetsService)
+		{
+			_applicationName = applicationName;
+			_spreadsheetId = spreadsheetId;
+			_sheetsService = sheetsService;
+		}
+
 		public void ConnectToGoogle()
 		{
 			GoogleCredential credential;
