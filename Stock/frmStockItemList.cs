@@ -61,5 +61,6 @@ namespace Calabria.Stock
 			dgvIStockitems.DataSource = binding;
 			*/
 		}
+
 	}
 }

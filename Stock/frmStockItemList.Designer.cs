@@ -30,13 +30,16 @@
 		{
 			this.label1 = new System.Windows.Forms.Label();
 			this.dgvIStockitems = new System.Windows.Forms.DataGridView();
-			this.button1 = new System.Windows.Forms.Button();
 			this.ItemId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ItemType = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ItemDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.button1 = new System.Windows.Forms.Button();
+			this.btn_addStockItem = new System.Windows.Forms.Button();
+			this.lbl_searchStockItems = new System.Windows.Forms.Label();
+			this.txt_searchStockItems = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.dgvIStockitems)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -44,7 +47,7 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(286, 9);
+			this.label1.Location = new System.Drawing.Point(12, 9);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(228, 39);
 			this.label1.TabIndex = 1;
@@ -61,23 +64,12 @@
             this.ItemDescription,
             this.Edit,
             this.Delete});
-			this.dgvIStockitems.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dgvIStockitems.Location = new System.Drawing.Point(0, 0);
+			this.dgvIStockitems.Location = new System.Drawing.Point(12, 122);
 			this.dgvIStockitems.Name = "dgvIStockitems";
 			this.dgvIStockitems.RowHeadersWidth = 51;
 			this.dgvIStockitems.RowTemplate.Height = 24;
-			this.dgvIStockitems.Size = new System.Drawing.Size(1252, 450);
+			this.dgvIStockitems.Size = new System.Drawing.Size(1020, 316);
 			this.dgvIStockitems.TabIndex = 2;
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(1123, 382);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(117, 56);
-			this.button1.TabIndex = 3;
-			this.button1.Text = "Cerrar";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.Button1_Click);
 			// 
 			// ItemId
 			// 
@@ -126,11 +118,49 @@
 			this.Delete.ToolTipText = "Eliminar";
 			this.Delete.Width = 125;
 			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(915, 7);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(117, 56);
+			this.button1.TabIndex = 3;
+			this.button1.Text = "Cerrar";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.Button1_Click);
+			// 
+			// btn_addStockItem
+			// 
+			this.btn_addStockItem.Location = new System.Drawing.Point(12, 67);
+			this.btn_addStockItem.Name = "btn_addStockItem";
+			this.btn_addStockItem.Size = new System.Drawing.Size(75, 23);
+			this.btn_addStockItem.TabIndex = 4;
+			this.btn_addStockItem.Text = "Agregar";
+			this.btn_addStockItem.UseVisualStyleBackColor = true;
+			// 
+			// lbl_searchStockItems
+			// 
+			this.lbl_searchStockItems.AutoSize = true;
+			this.lbl_searchStockItems.Location = new System.Drawing.Point(100, 68);
+			this.lbl_searchStockItems.Name = "lbl_searchStockItems";
+			this.lbl_searchStockItems.Size = new System.Drawing.Size(52, 16);
+			this.lbl_searchStockItems.TabIndex = 5;
+			this.lbl_searchStockItems.Text = "Buscar:";
+			// 
+			// txt_searchStockItems
+			// 
+			this.txt_searchStockItems.Location = new System.Drawing.Point(158, 68);
+			this.txt_searchStockItems.Name = "txt_searchStockItems";
+			this.txt_searchStockItems.Size = new System.Drawing.Size(242, 22);
+			this.txt_searchStockItems.TabIndex = 6;
+			// 
 			// frmStockItemList
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1252, 450);
+			this.ClientSize = new System.Drawing.Size(1044, 450);
+			this.Controls.Add(this.txt_searchStockItems);
+			this.Controls.Add(this.lbl_searchStockItems);
+			this.Controls.Add(this.btn_addStockItem);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.dgvIStockitems);
 			this.Controls.Add(this.label1);
@@ -154,5 +184,8 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn ItemDescription;
 		private System.Windows.Forms.DataGridViewButtonColumn Edit;
 		private System.Windows.Forms.DataGridViewButtonColumn Delete;
+		private System.Windows.Forms.Button btn_addStockItem;
+		private System.Windows.Forms.Label lbl_searchStockItems;
+		private System.Windows.Forms.TextBox txt_searchStockItems;
 	}
 }
