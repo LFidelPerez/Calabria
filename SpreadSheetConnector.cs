@@ -1,4 +1,5 @@
-﻿using Google.Apis.Auth.OAuth2;
+﻿using Calabria.Models;
+using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
 using Google.Apis.Sheets.v4;
 using Google.Apis.Sheets.v4.Data;
@@ -46,6 +47,18 @@ namespace Calabria
 			});
 		}
 
+		public int? FindRowIndexById(ValueRange data, int id) {
+			for (int i = 0; data.Values.Count > i; i++)
+			{
+				var item = data.Values[i];
+				var itemId = int.Parse((string)item[0]);
+
+				if (itemId == id) return i;
+			}
+
+			return null;
+		}
+
 		public ValueRange GetData(string range) {
 			var requestList = _sheetsService.Spreadsheets.Values.Get(_spreadsheetId, range);
 
@@ -78,6 +91,10 @@ namespace Calabria
 			BatchUpdateValuesResponse response = request.Execute();
 
 			return JsonConvert.SerializeObject(response);
+		}
+
+		public void DeleteData(string range) { 
+		
 		}
 	}
 }

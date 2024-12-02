@@ -35,7 +35,6 @@
 			this.ItemType = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ItemDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-			this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.button1 = new System.Windows.Forms.Button();
 			this.btn_addStockItem = new System.Windows.Forms.Button();
 			this.lbl_searchStockItems = new System.Windows.Forms.Label();
@@ -64,8 +63,7 @@
             this.ItemName,
             this.ItemType,
             this.ItemDescription,
-            this.Edit,
-            this.Delete});
+            this.Edit});
 			this.dgvIStockitems.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
 			this.dgvIStockitems.Location = new System.Drawing.Point(12, 122);
 			this.dgvIStockitems.Name = "dgvIStockitems";
@@ -74,6 +72,7 @@
 			this.dgvIStockitems.RowTemplate.Height = 24;
 			this.dgvIStockitems.Size = new System.Drawing.Size(1020, 316);
 			this.dgvIStockitems.TabIndex = 2;
+			this.dgvIStockitems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIStockitems_CellContentClick);
 			// 
 			// ItemId
 			// 
@@ -117,16 +116,6 @@
 			this.Edit.Text = "Editar";
 			this.Edit.UseColumnTextForButtonValue = true;
 			this.Edit.Width = 125;
-			// 
-			// Delete
-			// 
-			this.Delete.HeaderText = "Eliminar";
-			this.Delete.MinimumWidth = 6;
-			this.Delete.Name = "Delete";
-			this.Delete.ReadOnly = true;
-			this.Delete.Text = "Eliminar";
-			this.Delete.ToolTipText = "Eliminar";
-			this.Delete.Width = 125;
 			// 
 			// button1
 			// 
@@ -189,14 +178,13 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.DataGridView dgvIStockitems;
 		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btn_addStockItem;
+		private System.Windows.Forms.Label lbl_searchStockItems;
+		private System.Windows.Forms.TextBox txt_searchStockItems;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ItemId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ItemType;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ItemDescription;
 		private System.Windows.Forms.DataGridViewButtonColumn Edit;
-		private System.Windows.Forms.DataGridViewButtonColumn Delete;
-		private System.Windows.Forms.Button btn_addStockItem;
-		private System.Windows.Forms.Label lbl_searchStockItems;
-		private System.Windows.Forms.TextBox txt_searchStockItems;
 	}
 }

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,13 +30,28 @@ namespace Calabria.Stock
 
 		private void FrmStockItemList_Load(object sender, EventArgs e)
 		{
+			this.LoadStockItems();
+		}
+
+		private void btn_addStockItem_Click(object sender, EventArgs e)
+		{
+			_frmStockitem = new frmStockItem(CRUDEnum.C, dgvIStockitems.Rows.Count, null);
+			var result = _frmStockitem.ShowDialog(this);
+			this.LoadStockItems();
+		}
+
+		private void LoadStockItems()
+		{
 			var range = "StockItems!A2:D";
+
+			dgvIStockitems.Rows.Clear();
 
 			sheetConnector.ConnectToGoogle();
 			var rangeValues = sheetConnector.GetData(range);
 
 			List<StockItem> stockItems = new List<StockItem>();
-			for (int i = 0; rangeValues.Values.Count > i; i++) { 
+			for (int i = 0; rangeValues.Values.Count > i; i++)
+			{
 				var item = rangeValues.Values[i];
 
 				stockItems.Add(new StockItem()
@@ -43,15 +59,12 @@ namespace Calabria.Stock
 					Id = int.Parse((string)item[0]),
 					Description = (string)item[1],
 					Name = (string)item[2],
-					Type = (string)item[3]
+					ItemType = (string)item[3]
 				});
 
 
-				dgvIStockitems.Rows.Add(stockItems[i].Id, stockItems[i].Name, stockItems[i].Type, stockItems[i].Description);
+				dgvIStockitems.Rows.Add(stockItems[i].Id, stockItems[i].Name, stockItems[i].ItemType, stockItems[i].Description);
 			}
-
-			
-
 
 			/*
 			//use binding source to hold dummy data
@@ -62,11 +75,32 @@ namespace Calabria.Stock
 			dgvIStockitems.DataSource = binding;
 			*/
 		}
-
-		private void btn_addStockItem_Click(object sender, EventArgs e)
+				
+		private void dgvIStockitems_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
-			_frmStockitem = new frmStockItem();
-			_frmStockitem.ShowDialog();
+			var senderGrid = (DataGridView)sender;
+
+			if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+				e.RowIndex >= 0)
+			{
+				var item = dgvIStockitems.Rows[e.RowIndex];
+				var id = int.Parse(item.Cells[0].Value.ToString());
+				var description = (string)item.Cells[3].Value;
+				var name = (string)item.Cells[1].Value;
+				var itemType = (string)item.Cells[2].Value;
+
+				_frmStockitem = new frmStockItem(CRUDEnum.U, dgvIStockitems.Rows.Count, new StockItem()
+				{
+					Id = id,
+					Description = description,
+					Name = name,
+					ItemType = itemType
+				});
+
+				var result = _frmStockitem.ShowDialog(this);
+
+				this.LoadStockItems();
+			}
 		}
 	}
 }
