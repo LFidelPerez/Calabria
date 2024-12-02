@@ -56,6 +56,8 @@
 			// 
 			// dgvIStockitems
 			// 
+			this.dgvIStockitems.AllowUserToAddRows = false;
+			this.dgvIStockitems.AllowUserToDeleteRows = false;
 			this.dgvIStockitems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvIStockitems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ItemId,
@@ -64,8 +66,10 @@
             this.ItemDescription,
             this.Edit,
             this.Delete});
+			this.dgvIStockitems.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
 			this.dgvIStockitems.Location = new System.Drawing.Point(12, 122);
 			this.dgvIStockitems.Name = "dgvIStockitems";
+			this.dgvIStockitems.ReadOnly = true;
 			this.dgvIStockitems.RowHeadersWidth = 51;
 			this.dgvIStockitems.RowTemplate.Height = 24;
 			this.dgvIStockitems.Size = new System.Drawing.Size(1020, 316);
@@ -76,6 +80,7 @@
 			this.ItemId.HeaderText = "Id";
 			this.ItemId.MinimumWidth = 6;
 			this.ItemId.Name = "ItemId";
+			this.ItemId.ReadOnly = true;
 			this.ItemId.Visible = false;
 			this.ItemId.Width = 125;
 			// 
@@ -84,6 +89,7 @@
 			this.ItemName.HeaderText = "Nombre";
 			this.ItemName.MinimumWidth = 6;
 			this.ItemName.Name = "ItemName";
+			this.ItemName.ReadOnly = true;
 			this.ItemName.Width = 125;
 			// 
 			// ItemType
@@ -91,6 +97,7 @@
 			this.ItemType.HeaderText = "Tipo";
 			this.ItemType.MinimumWidth = 6;
 			this.ItemType.Name = "ItemType";
+			this.ItemType.ReadOnly = true;
 			this.ItemType.Width = 125;
 			// 
 			// ItemDescription
@@ -98,6 +105,7 @@
 			this.ItemDescription.HeaderText = "Descripcion";
 			this.ItemDescription.MinimumWidth = 6;
 			this.ItemDescription.Name = "ItemDescription";
+			this.ItemDescription.ReadOnly = true;
 			this.ItemDescription.Width = 125;
 			// 
 			// Edit
@@ -105,6 +113,7 @@
 			this.Edit.HeaderText = "Editar";
 			this.Edit.MinimumWidth = 6;
 			this.Edit.Name = "Edit";
+			this.Edit.ReadOnly = true;
 			this.Edit.Text = "Editar";
 			this.Edit.UseColumnTextForButtonValue = true;
 			this.Edit.Width = 125;
@@ -114,6 +123,7 @@
 			this.Delete.HeaderText = "Eliminar";
 			this.Delete.MinimumWidth = 6;
 			this.Delete.Name = "Delete";
+			this.Delete.ReadOnly = true;
 			this.Delete.Text = "Eliminar";
 			this.Delete.ToolTipText = "Eliminar";
 			this.Delete.Width = 125;
@@ -130,17 +140,18 @@
 			// 
 			// btn_addStockItem
 			// 
-			this.btn_addStockItem.Location = new System.Drawing.Point(12, 67);
+			this.btn_addStockItem.Location = new System.Drawing.Point(12, 64);
 			this.btn_addStockItem.Name = "btn_addStockItem";
-			this.btn_addStockItem.Size = new System.Drawing.Size(75, 23);
+			this.btn_addStockItem.Size = new System.Drawing.Size(75, 31);
 			this.btn_addStockItem.TabIndex = 4;
 			this.btn_addStockItem.Text = "Agregar";
 			this.btn_addStockItem.UseVisualStyleBackColor = true;
+			this.btn_addStockItem.Click += new System.EventHandler(this.btn_addStockItem_Click);
 			// 
 			// lbl_searchStockItems
 			// 
 			this.lbl_searchStockItems.AutoSize = true;
-			this.lbl_searchStockItems.Location = new System.Drawing.Point(100, 68);
+			this.lbl_searchStockItems.Location = new System.Drawing.Point(100, 71);
 			this.lbl_searchStockItems.Name = "lbl_searchStockItems";
 			this.lbl_searchStockItems.Size = new System.Drawing.Size(52, 16);
 			this.lbl_searchStockItems.TabIndex = 5;

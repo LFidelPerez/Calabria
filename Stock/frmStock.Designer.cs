@@ -36,7 +36,7 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(325, 9);
+			this.label1.Location = new System.Drawing.Point(190, 9);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(135, 39);
 			this.label1.TabIndex = 0;
@@ -57,7 +57,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(553, 198);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.label1);
 			this.Name = "frmStock";

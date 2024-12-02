@@ -14,6 +14,7 @@ namespace Calabria.Stock
 	public partial class frmStockItemList : Form
 	{
 		private readonly SpreadSheetConnector sheetConnector;
+		private frmStockItem _frmStockitem;
 
 		public frmStockItemList()
 		{
@@ -62,5 +63,10 @@ namespace Calabria.Stock
 			*/
 		}
 
+		private void btn_addStockItem_Click(object sender, EventArgs e)
+		{
+			_frmStockitem = new frmStockItem();
+			_frmStockitem.ShowDialog();
+		}
 	}
 }
