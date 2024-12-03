@@ -11,12 +11,15 @@ namespace Calabria.Base.Forms
 	{
 		public enum CRUDStateEnum
 		{
-			X, C, U, D
+			X, Create, Update, Delete
 		}
 
 		public CRUDStateEnum CRUDState { get; set; }
 
-		
 
+		public CRUDForm(CRUDStateEnum stateEnum)
+		{
+			CRUDState = stateEnum;
+		}
 	}
 }

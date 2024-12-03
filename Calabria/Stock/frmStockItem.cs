@@ -16,7 +16,7 @@ namespace Calabria.Stock
 
 		public int ItemId { get; private set; }
 
-		public frmStockItem(int itemCount, StockItem stockItem)
+		public frmStockItem(CRUDStateEnum stateEnum, int itemCount, StockItem stockItem):base(stateEnum)
 		{
 			InitializeComponent();
 			sheetConnector = new SpreadSheetConnector();
@@ -25,15 +25,15 @@ namespace Calabria.Stock
 
 			switch (this.CRUDState)
 			{
-				case CRUDStateEnum.C:
+				case CRUDStateEnum.Create:
 					indexOffset += itemCount;
 					ItemId = itemCount + 1;
 					this.btnUpdate.Enabled = false;
 					break;
-				case CRUDStateEnum.U:
+				case CRUDStateEnum.Update:
 					this.btnSave.Enabled = false;
 					break;
-				case CRUDStateEnum.D:
+				case CRUDStateEnum.Delete:
 					break;
 				default:
 					throw new Exception("CRUD State invalid");
