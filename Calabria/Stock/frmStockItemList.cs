@@ -35,7 +35,8 @@ namespace Calabria.Stock
 
 		private void btn_addStockItem_Click(object sender, EventArgs e)
 		{
-			_frmStockitem = new frmStockItem(CRUDEnum.C, dgvIStockitems.Rows.Count, null);
+			_frmStockitem = new frmStockItem(dgvIStockitems.Rows.Count, null);
+			_frmStockitem.CRUDState = Base.Forms.CRUDForm.CRUDStateEnum.C;
 			var result = _frmStockitem.ShowDialog(this);
 			this.LoadStockItems();
 		}
@@ -89,13 +90,14 @@ namespace Calabria.Stock
 				var name = (string)item.Cells[1].Value;
 				var itemType = (string)item.Cells[2].Value;
 
-				_frmStockitem = new frmStockItem(CRUDEnum.U, dgvIStockitems.Rows.Count, new StockItem()
+				_frmStockitem = new frmStockItem(dgvIStockitems.Rows.Count, new StockItem()
 				{
 					Id = id,
 					Description = description,
 					Name = name,
 					ItemType = itemType
 				});
+				_frmStockitem.CRUDState = Base.Forms.CRUDForm.CRUDStateEnum.U;
 
 				var result = _frmStockitem.ShowDialog(this);
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Windows.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,13 +7,16 @@ using System.Threading.Tasks;
 
 namespace Calabria.Base.Forms
 {
-	internal class CRUDForm
+	public class CRUDForm : Form
 	{
-		public enum CRUDEnum
+		public enum CRUDStateEnum
 		{
-			C, U, D
+			X, C, U, D
 		}
 
+		public CRUDStateEnum CRUDState { get; set; }
+
+		
 
 	}
 }

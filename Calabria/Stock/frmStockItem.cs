@@ -2,43 +2,37 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Calabria.Base.Forms;
 
 namespace Calabria.Stock
 {
-	public enum CRUDEnum
-	{
-		C, U, D
-	}
-
-	public partial class frmStockItem : Form
+	public partial class frmStockItem : CRUDForm
 	{
 		private readonly SpreadSheetConnector sheetConnector;
-		private readonly CRUDEnum crudAction;
 		private int indexOffset = 2;
 		private int itemCount;
 		private StockItem stockItem;
 
 		public int ItemId { get; private set; }
 
-		public frmStockItem(CRUDEnum crudAction, int itemCount, StockItem stockItem)
+		public frmStockItem(int itemCount, StockItem stockItem)
 		{
 			InitializeComponent();
 			sheetConnector = new SpreadSheetConnector();
-			this.crudAction = crudAction;
 			this.itemCount = itemCount;
 			this.stockItem = stockItem;
 
-			switch (crudAction)
+			switch (this.CRUDState)
 			{
-				case CRUDEnum.C:
+				case CRUDStateEnum.C:
 					indexOffset += itemCount;
 					ItemId = itemCount + 1;
 					this.btnUpdate.Enabled = false;
 					break;
-				case CRUDEnum.U:
+				case CRUDStateEnum.U:
 					this.btnSave.Enabled = false;
 					break;
-				case CRUDEnum.D:
+				case CRUDStateEnum.D:
 					break;
 				default:
 					throw new Exception("CRUD State invalid");
