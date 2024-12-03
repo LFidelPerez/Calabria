@@ -1,13 +1,8 @@
 ﻿using System.Windows.Forms;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Calabria.Base.Forms
 {
-	public class CRUDForm : Form
+	public partial class CRUDForm : Form
 	{
 		public enum CRUDStateEnum
 		{
@@ -16,9 +11,15 @@ namespace Calabria.Base.Forms
 
 		public CRUDStateEnum CRUDState { get; set; }
 
+		public CRUDForm()
+		{
+			InitializeComponent();
+		}
 
 		public CRUDForm(CRUDStateEnum stateEnum)
 		{
+			InitializeComponent();
+
 			CRUDState = stateEnum;
 		}
 	}
