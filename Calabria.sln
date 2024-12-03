@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calabria.Models", "Calabria
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calabria.Base", "Calabria.Base\Calabria.Base.csproj", "{042BBB19-F6A8-4CB7-9289-ECF1F839D4F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calabria.Services", "Calabria.Services\Calabria.Services.csproj", "{C4D82F55-FCF7-4E64-9BFB-994918C890E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{042BBB19-F6A8-4CB7-9289-ECF1F839D4F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{042BBB19-F6A8-4CB7-9289-ECF1F839D4F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{042BBB19-F6A8-4CB7-9289-ECF1F839D4F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4D82F55-FCF7-4E64-9BFB-994918C890E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4D82F55-FCF7-4E64-9BFB-994918C890E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4D82F55-FCF7-4E64-9BFB-994918C890E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4D82F55-FCF7-4E64-9BFB-994918C890E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

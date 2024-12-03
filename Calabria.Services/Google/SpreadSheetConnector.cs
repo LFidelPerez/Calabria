@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
-namespace Calabria
+namespace Calabria.Services.Google
 {
 	public class SpreadSheetConnector
 	{
