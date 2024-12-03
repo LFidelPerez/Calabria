@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "B:\\_Source\\repos\\Calabria\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5F3DF53F-EB75-458C-B6A6-BF78FC4CC98E}|Calabria.csproj|b:\\_source\\repos\\calabria\\stock\\frmstockitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F3DF53F-EB75-458C-B6A6-BF78FC4CC98E}|Calabria.csproj|solutionrelative:stock\\frmstockitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5F3DF53F-EB75-458C-B6A6-BF78FC4CC98E}|Calabria\\Calabria.csproj|b:\\_source\\repos\\calabria\\calabria\\stock\\frmstockitemlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5F3DF53F-EB75-458C-B6A6-BF78FC4CC98E}|Calabria\\Calabria.csproj|solutionrelative:calabria\\stock\\frmstockitemlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F3DF53F-EB75-458C-B6A6-BF78FC4CC98E}|Calabria.csproj|B:\\_Source\\repos\\Calabria\\stock\\frmstockitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5F3DF53F-EB75-458C-B6A6-BF78FC4CC98E}|Calabria.csproj|solutionrelative:stock\\frmstockitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5F3DF53F-EB75-458C-B6A6-BF78FC4CC98E}|Calabria\\Calabria.csproj|b:\\_source\\repos\\calabria\\calabria\\stock\\frmstockitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5F3DF53F-EB75-458C-B6A6-BF78FC4CC98E}|Calabria\\Calabria.csproj|solutionrelative:calabria\\stock\\frmstockitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F3DF53F-EB75-458C-B6A6-BF78FC4CC98E}|Calabria.csproj|B:\\_Source\\repos\\Calabria\\stock\\frmstock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5F3DF53F-EB75-458C-B6A6-BF78FC4CC98E}|Calabria.csproj|solutionrelative:stock\\frmstock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5F3DF53F-EB75-458C-B6A6-BF78FC4CC98E}|Calabria\\Calabria.csproj|b:\\_source\\repos\\calabria\\calabria\\stock\\frmstock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5F3DF53F-EB75-458C-B6A6-BF78FC4CC98E}|Calabria\\Calabria.csproj|solutionrelative:calabria\\stock\\frmstock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F3DF53F-EB75-458C-B6A6-BF78FC4CC98E}|Calabria.csproj|B:\\_Source\\repos\\Calabria\\stock\\frmstockitemlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5F3DF53F-EB75-458C-B6A6-BF78FC4CC98E}|Calabria.csproj|solutionrelative:stock\\frmstockitemlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F3DF53F-EB75-458C-B6A6-BF78FC4CC98E}|Calabria.csproj|B:\\_Source\\repos\\Calabria\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5F3DF53F-EB75-458C-B6A6-BF78FC4CC98E}|Calabria.csproj|solutionrelative:frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5F3DF53F-EB75-458C-B6A6-BF78FC4CC98E}|Calabria\\Calabria.csproj|b:\\_source\\repos\\calabria\\calabria\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5F3DF53F-EB75-458C-B6A6-BF78FC4CC98E}|Calabria\\Calabria.csproj|solutionrelative:calabria\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,59 +31,50 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmStockItem.cs",
-              "DocumentMoniker": "B:\\_Source\\repos\\Calabria\\Stock\\frmStockItem.cs",
-              "RelativeDocumentMoniker": "Stock\\frmStockItem.cs",
-              "ToolTip": "B:\\_Source\\repos\\Calabria\\Stock\\frmStockItem.cs",
-              "RelativeToolTip": "Stock\\frmStockItem.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAEcAAAAQAAAAAAAAAA==",
+              "Title": "frmStockItemList.cs [Design]",
+              "DocumentMoniker": "B:\\_Source\\repos\\Calabria\\Calabria\\Stock\\frmStockItemList.cs",
+              "RelativeDocumentMoniker": "Calabria\\Stock\\frmStockItemList.cs",
+              "ToolTip": "B:\\_Source\\repos\\Calabria\\Calabria\\Stock\\frmStockItemList.cs [Design]",
+              "RelativeToolTip": "Calabria\\Stock\\frmStockItemList.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T21:54:42.951Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T16:47:58.008Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "frmStockItem.cs [Design]",
-              "DocumentMoniker": "B:\\_Source\\repos\\Calabria\\Stock\\frmStockItem.cs",
-              "RelativeDocumentMoniker": "Stock\\frmStockItem.cs",
-              "ToolTip": "B:\\_Source\\repos\\Calabria\\Stock\\frmStockItem.cs [Design]",
-              "RelativeToolTip": "Stock\\frmStockItem.cs [Design]",
+              "DocumentMoniker": "B:\\_Source\\repos\\Calabria\\Calabria\\Stock\\frmStockItem.cs",
+              "RelativeDocumentMoniker": "Calabria\\Stock\\frmStockItem.cs",
+              "ToolTip": "B:\\_Source\\repos\\Calabria\\Calabria\\Stock\\frmStockItem.cs [Design]",
+              "RelativeToolTip": "Calabria\\Stock\\frmStockItem.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T21:49:42.102Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmStockItemList.cs [Design]",
-              "DocumentMoniker": "B:\\_Source\\repos\\Calabria\\Stock\\frmStockItemList.cs",
-              "RelativeDocumentMoniker": "Stock\\frmStockItemList.cs",
-              "ToolTip": "B:\\_Source\\repos\\Calabria\\Stock\\frmStockItemList.cs [Design]",
-              "RelativeToolTip": "Stock\\frmStockItemList.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T21:49:19.416Z"
+              "WhenOpened": "2024-12-03T16:47:57.032Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "frmStock.cs [Design]",
-              "DocumentMoniker": "B:\\_Source\\repos\\Calabria\\Stock\\frmStock.cs",
-              "RelativeDocumentMoniker": "Stock\\frmStock.cs",
-              "ToolTip": "B:\\_Source\\repos\\Calabria\\Stock\\frmStock.cs [Design]",
-              "RelativeToolTip": "Stock\\frmStock.cs [Design]",
+              "DocumentMoniker": "B:\\_Source\\repos\\Calabria\\Calabria\\Stock\\frmStock.cs",
+              "RelativeDocumentMoniker": "Calabria\\Stock\\frmStock.cs",
+              "ToolTip": "B:\\_Source\\repos\\Calabria\\Calabria\\Stock\\frmStock.cs [Design]",
+              "RelativeToolTip": "Calabria\\Stock\\frmStock.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T21:49:13.641Z"
+              "WhenOpened": "2024-12-03T16:47:55.83Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "frmMain.cs [Design]",
-              "DocumentMoniker": "B:\\_Source\\repos\\Calabria\\frmMain.cs",
-              "RelativeDocumentMoniker": "frmMain.cs",
-              "ToolTip": "B:\\_Source\\repos\\Calabria\\frmMain.cs [Design]",
-              "RelativeToolTip": "frmMain.cs [Design]",
+              "DocumentMoniker": "B:\\_Source\\repos\\Calabria\\Calabria\\frmMain.cs",
+              "RelativeDocumentMoniker": "Calabria\\frmMain.cs",
+              "ToolTip": "B:\\_Source\\repos\\Calabria\\Calabria\\frmMain.cs [Design]",
+              "RelativeToolTip": "Calabria\\frmMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T21:49:02.868Z"
+              "WhenOpened": "2024-12-03T16:47:51.668Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
