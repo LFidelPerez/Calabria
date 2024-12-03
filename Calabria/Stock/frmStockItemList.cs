@@ -17,7 +17,7 @@ namespace Calabria.Stock
 	public partial class frmStockItemList : Form
 	{
 		private readonly SpreadSheetConnector sheetConnector;
-		private frmStockItem _frmStockitem;
+		private frmCRUDStock _frmStockitem;
 
 		public frmStockItemList()
 		{
@@ -37,9 +37,10 @@ namespace Calabria.Stock
 
 		private void btn_addStockItem_Click(object sender, EventArgs e)
 		{
-			_frmStockitem = new frmStockItem(CRUDStateEnum.Create, dgvIStockitems.Rows.Count, null);
+			_frmStockitem = new frmCRUDStock(CRUDStateEnum.Create, dgvIStockitems.Rows.Count, null);
 			var result = _frmStockitem.ShowDialog(this);
-			this.LoadStockItems();
+
+			if (result == DialogResult.OK) this.LoadStockItems();
 		}
 
 		private void LoadStockItems()
@@ -91,7 +92,7 @@ namespace Calabria.Stock
 				var name = (string)item.Cells[1].Value;
 				var itemType = (string)item.Cells[2].Value;
 
-				_frmStockitem = new frmStockItem(CRUDStateEnum.Update, dgvIStockitems.Rows.Count, new StockItem()
+				_frmStockitem = new frmCRUDStock(CRUDStateEnum.Update, e.RowIndex, new StockItem()
 				{
 					Id = id,
 					Description = description,
@@ -101,7 +102,7 @@ namespace Calabria.Stock
 
 				var result = _frmStockitem.ShowDialog(this);
 
-				this.LoadStockItems();
+				if(result == DialogResult.OK) this.LoadStockItems();
 			}
 		}
 	}

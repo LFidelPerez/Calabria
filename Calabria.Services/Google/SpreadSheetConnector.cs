@@ -64,11 +64,27 @@ namespace Calabria.Services.Google
 			return requestList.Execute();
 		}
 
+		public string AppendData(string range, List<IList<object>> data)
+		{
+			var dataValueRange = new ValueRange
+			{
+				Range = range,
+				Values = data
+			};
+
+			var request = _sheetsService.Spreadsheets.Values.Append(dataValueRange, _spreadsheetId, range);
+			request.ValueInputOption = SpreadsheetsResource.ValuesResource.AppendRequest.ValueInputOptionEnum.RAW;
+
+			AppendValuesResponse response = request.Execute();
+
+			return JsonConvert.SerializeObject(response);
+		}
+
 		// Pass in your data as a list of a list (2-D lists are equivalent to the 2-D spreadsheet structure)
 		public string UpdateData(string range, List<IList<object>> data)
 		{
 			//string _range = "Data-Ingreso!A1:Y";
-			string valueInputOption = "USER_ENTERED";
+			string valueInputOption = "RAW";
 			
 			// The new values to apply to the spreadsheet.
 			List<ValueRange> updateData = new List<ValueRange>();
@@ -90,10 +106,6 @@ namespace Calabria.Services.Google
 			BatchUpdateValuesResponse response = request.Execute();
 
 			return JsonConvert.SerializeObject(response);
-		}
-
-		public void DeleteData(string range) { 
-		
 		}
 	}
 }

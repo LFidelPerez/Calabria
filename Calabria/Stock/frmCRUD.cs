@@ -7,7 +7,7 @@ using Calabria.Services.Google;
 
 namespace Calabria.Stock
 {
-	public partial class frmStockItem : CRUDForm
+	public partial class frmCRUDStock : CRUDForm
 	{
 		private readonly SpreadSheetConnector sheetConnector;
 		private int indexOffset = 2;
@@ -16,21 +16,23 @@ namespace Calabria.Stock
 
 		public int ItemId { get; private set; }
 
-		public frmStockItem(CRUDStateEnum stateEnum, int itemCount, StockItem stockItem):base(stateEnum)
+		public frmCRUDStock(CRUDStateEnum stateEnum, int itemOffset, StockItem stockItem):base(stateEnum)
 		{
 			InitializeComponent();
 			sheetConnector = new SpreadSheetConnector();
-			this.itemCount = itemCount;
+			this.itemCount = itemOffset;
 			this.stockItem = stockItem;
 
 			switch (this.CRUDState)
 			{
 				case CRUDStateEnum.Create:
-					indexOffset += itemCount;
-					ItemId = itemCount + 1;
+					indexOffset += itemOffset;
+					ItemId = itemOffset + 1;
 					this.btnUpdate.Enabled = false;
 					break;
 				case CRUDStateEnum.Update:
+					indexOffset = indexOffset + itemOffset;
+					ItemId = itemOffset;
 					this.btnSave.Enabled = false;
 					break;
 				case CRUDStateEnum.Delete:
@@ -68,14 +70,35 @@ namespace Calabria.Stock
 					}
 				};
 
-			sheetConnector.UpdateData(range, modelList);
+			sheetConnector.AppendData(range, modelList);
 
+			this.DialogResult = DialogResult.OK;
 			this.Close();
 		}
 
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
+			string range = $"StockItems!A{indexOffset}:D";
 
+			sheetConnector.ConnectToGoogle();
+
+			var item = new StockItem { Id = ItemId, Name = txtName.Text, Description = txtDescription.Text, ItemType = txtType.Text };
+
+			var modelList = new List<IList<object>>
+				{
+					new List<object>
+					{
+						item.Id,
+						item.ItemType,
+						item.Name,
+						item.Description
+					}
+				};
+
+			sheetConnector.UpdateData(range, modelList);
+
+			this.DialogResult = DialogResult.OK;
+			this.Close();
 		}
 	}
 }
