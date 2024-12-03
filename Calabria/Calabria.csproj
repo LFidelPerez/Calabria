@@ -77,7 +77,6 @@
     <Compile Include="Stock\frmStock.Designer.cs">
       <DependentUpon>frmStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\StockItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpreadSheetConnector.cs" />
@@ -130,6 +129,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Calabria.Base\Calabria.Base.csproj">
+      <Project>{042bbb19-f6a8-4cb7-9289-ecf1f839d4f7}</Project>
+      <Name>Calabria.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Calabria.Models\Calabria.Models.csproj">
+      <Project>{e7d07cba-d537-4176-be9d-d4307f91ecc5}</Project>
+      <Name>Calabria.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

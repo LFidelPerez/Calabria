@@ -1,7 +1,6 @@
 ﻿using Calabria.Models;
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace Calabria.Stock

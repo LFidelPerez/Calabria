@@ -1,0 +1,6 @@
+B:\_Source\repos\Calabria\Calabria.Base\bin\Debug\Calabria.Base.dll
+B:\_Source\repos\Calabria\Calabria.Base\bin\Debug\Calabria.Base.pdb
+B:\_Source\repos\Calabria\Calabria.Base\obj\Debug\Calabria.Base.csproj.AssemblyReference.cache
+B:\_Source\repos\Calabria\Calabria.Base\obj\Debug\Calabria.Base.csproj.CoreCompileInputs.cache
+B:\_Source\repos\Calabria\Calabria.Base\obj\Debug\Calabria.Base.dll
+B:\_Source\repos\Calabria\Calabria.Base\obj\Debug\Calabria.Base.pdb
