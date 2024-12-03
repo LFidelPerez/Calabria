@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Calabria/FileContentIndex
+/.vs/Calabria/v17/.suo
+/.vs/Calabria/v17/DocumentLayout.backup.json
+/.vs/Calabria/v17/DocumentLayout.json
+/Calabria.Models/.vs
