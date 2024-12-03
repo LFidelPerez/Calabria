@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace Calabria
 {
-	public partial class frmStock : Form
+	public partial class frmStockMain : Form
 	{
 		private frmStockItemList _frmStockItemList;
 
-		public frmStock()
+		public frmStockMain()
 		{
 			InitializeComponent();
 		}

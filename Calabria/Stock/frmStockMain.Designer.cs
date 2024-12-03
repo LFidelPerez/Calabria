@@ -1,6 +1,6 @@
 ﻿namespace Calabria
 {
-	partial class frmStock
+	partial class frmStockMain
 	{
 		/// <summary>
 		/// Required designer variable.
