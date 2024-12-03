@@ -137,6 +137,10 @@
       <Project>{042bbb19-f6a8-4cb7-9289-ecf1f839d4f7}</Project>
       <Name>Calabria.Base</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Calabria.Helpers\Calabria.Helpers.csproj">
+      <Project>{88584874-09d0-458c-b100-a7cb02c77975}</Project>
+      <Name>Calabria.Helpers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Calabria.Models\Calabria.Models.csproj">
       <Project>{e7d07cba-d537-4176-be9d-d4307f91ecc5}</Project>
       <Name>Calabria.Models</Name>
