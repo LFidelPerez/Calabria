@@ -79,11 +79,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stock\frmCRUD.cs">
+    <Compile Include="Stock\frmCRUDStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Stock\frmCRUD.Designer.cs">
-      <DependentUpon>frmCRUD.cs</DependentUpon>
+    <Compile Include="Stock\frmCRUDStock.Designer.cs">
+      <DependentUpon>frmCRUDStock.cs</DependentUpon>
     </Compile>
     <Compile Include="Stock\frmStockItemList.cs">
       <SubType>Form</SubType>
@@ -106,8 +106,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Stock\frmCRUD.resx">
-      <DependentUpon>frmCRUD.cs</DependentUpon>
+    <EmbeddedResource Include="Stock\frmCRUDStock.resx">
+      <DependentUpon>frmCRUDStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stock\frmStockItemList.resx">
       <DependentUpon>frmStockItemList.cs</DependentUpon>

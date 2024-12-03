@@ -1,39 +1,53 @@
-﻿using Calabria.Models;
+﻿using Calabria.Base.Forms;
+using Calabria.Models;
 using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Windows.Forms;
-using Calabria.Base.Forms;
-using Calabria.Services.Google;
 
 namespace Calabria.Stock
 {
-	public partial class frmCRUDStock : CRUDForm
+	public partial class FrmCRUDStock : CRUDForm
 	{
-		private readonly SpreadSheetConnector sheetConnector;
-		private int indexOffset = 2;
-		private int itemCount;
-		private StockItem stockItem;
+		private readonly string sheetName = "StockItems";
+		private readonly string rangeFirstColumn = "A";
+		private readonly string rangeLastColumn = "D";
+		private readonly string range = "{sheetName}!{rangeFirstColumn}{indexOffset}:{rangeLastColumn}";
+		private readonly int indexOffset = 2;
 
-		public int ItemId { get; private set; }
+		private int ItemId { get; set; }
+		private frmStockItemList MyOwner { get { return (frmStockItemList)Owner; } }
 
-		public frmCRUDStock(CRUDStateEnum stateEnum, int itemOffset, StockItem stockItem):base(stateEnum)
+		private string GetRange
+		{
+			get
+			{
+				StringBuilder sb = new StringBuilder(range);
+
+				sb.Replace("{sheetName}", sheetName);
+				sb.Replace("{rangeFirstColumn}", rangeFirstColumn);
+				sb.Replace("{indexOffset}", indexOffset.ToString());
+				sb.Replace("{rangeLastColumn}", rangeLastColumn);
+
+				return sb.ToString();
+			}
+		}
+
+		public FrmCRUDStock(CRUDStateEnum stateEnum, int itemOffset, StockItem stockItem) : base(stateEnum)
 		{
 			InitializeComponent();
-			sheetConnector = new SpreadSheetConnector();
-			this.itemCount = itemOffset;
-			this.stockItem = stockItem;
 
-			switch (this.CRUDState)
+			switch (CRUDState)
 			{
 				case CRUDStateEnum.Create:
 					indexOffset += itemOffset;
 					ItemId = itemOffset + 1;
-					this.btnUpdate.Enabled = false;
+					btnUpdate.Enabled = false;
 					break;
 				case CRUDStateEnum.Update:
-					indexOffset = indexOffset + itemOffset;
+					indexOffset += itemOffset;
 					ItemId = itemOffset;
-					this.btnSave.Enabled = false;
+					btnSave.Enabled = false;
 					break;
 				case CRUDStateEnum.Delete:
 					break;
@@ -51,12 +65,6 @@ namespace Calabria.Stock
 
 		private void btnSave_Click(object sender, EventArgs e)
 		{
-			//var range = "StockItems!A2:D";
-
-			string range = $"StockItems!A{indexOffset}:D";
-
-			sheetConnector.ConnectToGoogle();
-
 			var item = new StockItem { Id = ItemId, Name = txtName.Text, Description = txtDescription.Text, ItemType = txtType.Text };
 
 			var modelList = new List<IList<object>>
@@ -70,18 +78,14 @@ namespace Calabria.Stock
 					}
 				};
 
-			sheetConnector.AppendData(range, modelList);
+			MyOwner.sheetConnector.AppendData(GetRange, modelList);
 
-			this.DialogResult = DialogResult.OK;
-			this.Close();
+			DialogResult = DialogResult.OK;
+			Close();
 		}
 
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
-			string range = $"StockItems!A{indexOffset}:D";
-
-			sheetConnector.ConnectToGoogle();
-
 			var item = new StockItem { Id = ItemId, Name = txtName.Text, Description = txtDescription.Text, ItemType = txtType.Text };
 
 			var modelList = new List<IList<object>>
@@ -95,18 +99,14 @@ namespace Calabria.Stock
 					}
 				};
 
-			sheetConnector.UpdateData(range, modelList);
+			MyOwner.sheetConnector.UpdateData(GetRange, modelList);
 
-			this.DialogResult = DialogResult.OK;
-			this.Close();
+			DialogResult = DialogResult.OK;
+			Close();
 		}
 
 		private void btnDelete_Click(object sender, EventArgs e)
 		{
-			string range = $"StockItems!A{indexOffset}:D";
-
-			sheetConnector.ConnectToGoogle();
-
 			var item = new StockItem { Id = ItemId, Name = txtName.Text, Description = txtDescription.Text, ItemType = txtType.Text };
 
 			var modelList = new List<IList<object>>
@@ -120,10 +120,10 @@ namespace Calabria.Stock
 					}
 				};
 
-			sheetConnector.DeleteData(range, modelList);
+			MyOwner.sheetConnector.DeleteData(GetRange, modelList);
 
-			this.DialogResult = DialogResult.OK;
-			this.Close();
+			DialogResult = DialogResult.OK;
+			Close();
 		}
 	}
 }

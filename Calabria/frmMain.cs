@@ -1,12 +1,5 @@
 ﻿using Calabria.Services.Google;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Calabria
@@ -24,10 +17,10 @@ namespace Calabria
 
 		private void Button1_Click(object sender, EventArgs e)
 		{
-			_frmStock = new frmStockMain();	
+			_frmStock = new frmStockMain();
 			_frmStock.ShowDialog();
 		}
-
+		/*
 		public void AddTestData()
 		{
 			try
@@ -68,17 +61,18 @@ namespace Calabria
 				throw ex;
 			}
 		}
-
+		*/
 		private void frmMain_Load(object sender, EventArgs e)
 		{
 
 		}
 	}
-
+	/*
 	public class Ingreso
 	{
 		public int Id { get; set; }
 		public string Nombre { get; set; }
 		public int Cuota { get; set; }
 	}
+	*/
 }

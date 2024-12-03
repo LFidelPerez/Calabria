@@ -46,19 +46,24 @@ namespace Calabria.Services.Google
 			});
 		}
 
-		public int? FindRowIndexById(ValueRange data, int id) {
+		public int? FindRowIndexById(ValueRange data, int id)
+		{
 			for (int i = 0; data.Values.Count > i; i++)
 			{
 				var item = data.Values[i];
 				var itemId = int.Parse((string)item[0]);
 
-				if (itemId == id) return i;
+				if (itemId == id)
+				{
+					return i;
+				}
 			}
 
 			return null;
 		}
 
-		public ValueRange GetData(string range) {
+		public ValueRange GetData(string range)
+		{
 			var requestList = _sheetsService.Spreadsheets.Values.Get(_spreadsheetId, range);
 
 			return requestList.Execute();
@@ -85,7 +90,7 @@ namespace Calabria.Services.Google
 		{
 			//string _range = "Data-Ingreso!A1:Y";
 			string valueInputOption = "RAW";
-			
+
 			// The new values to apply to the spreadsheet.
 			List<ValueRange> updateData = new List<ValueRange>();
 			var dataValueRange = new ValueRange
