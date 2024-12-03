@@ -7,3 +7,11 @@
 /.vs/Calabria/v17/DocumentLayout.backup.json
 /.vs/Calabria/v17/DocumentLayout.json
 /Calabria.Models/.vs
+/Calabria.Base/.vs
+/Calabria.Base/bin/Debug/Calabria.Base.dll
+/Calabria.Base/bin/Debug/Calabria.Base.pdb
+/Calabria.Base/obj/Debug/Calabria.Base.csproj.AssemblyReference.cache
+/Calabria.Base/obj/Debug/Calabria.Base.csproj.CoreCompileInputs.cache
+/Calabria.Base/obj/Debug/Calabria.Base.dll
+/Calabria.Base/obj/Debug/Calabria.Base.pdb
+/Calabria.Base/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
