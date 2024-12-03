@@ -100,5 +100,30 @@ namespace Calabria.Stock
 			this.DialogResult = DialogResult.OK;
 			this.Close();
 		}
+
+		private void btnDelete_Click(object sender, EventArgs e)
+		{
+			string range = $"StockItems!A{indexOffset}:D";
+
+			sheetConnector.ConnectToGoogle();
+
+			var item = new StockItem { Id = ItemId, Name = txtName.Text, Description = txtDescription.Text, ItemType = txtType.Text };
+
+			var modelList = new List<IList<object>>
+				{
+					new List<object>
+					{
+						item.Id,
+						item.ItemType,
+						item.Name,
+						item.Description
+					}
+				};
+
+			sheetConnector.DeleteData(range, modelList);
+
+			this.DialogResult = DialogResult.OK;
+			this.Close();
+		}
 	}
 }

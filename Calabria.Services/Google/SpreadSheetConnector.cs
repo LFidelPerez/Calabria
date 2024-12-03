@@ -107,5 +107,10 @@ namespace Calabria.Services.Google
 
 			return JsonConvert.SerializeObject(response);
 		}
+
+		public void DeleteData(string range, List<IList<object>> data)
+		{
+			UpdateData(range, data);
+		}
 	}
 }

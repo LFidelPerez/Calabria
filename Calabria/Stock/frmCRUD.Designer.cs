@@ -115,8 +115,9 @@
 			this.btnDelete.TabIndex = 8;
 			this.btnDelete.Text = "Eliminar";
 			this.btnDelete.UseVisualStyleBackColor = true;
+			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
-			// frmStockItem
+			// frmCRUDStock
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -130,7 +131,7 @@
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.txtName);
 			this.Controls.Add(this.label1);
-			this.Name = "frmStockItem";
+			this.Name = "frmCRUDStock";
 			this.Text = "frmStockItem";
 			this.ResumeLayout(false);
 			this.PerformLayout();
