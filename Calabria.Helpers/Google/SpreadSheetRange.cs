@@ -38,7 +38,7 @@ namespace Calabria.Helpers.Google
 
 			sb.Replace("{sheetName}", SheetName);
 			sb.Replace("{rangeFirstColumn}", FirstColumn);
-			sb.Replace("{indexOffset}", FirstIndexOffset.ToString());
+			sb.Replace("{firstIndexOffset}", FirstIndexOffset.ToString());
 			sb.Replace("{rangeLastColumn}", LastColumn);
 			sb.Replace("{lastIndexOffset}", (LastIndexOffset != int.MinValue) ? LastIndexOffset.ToString() : string.Empty);
 
