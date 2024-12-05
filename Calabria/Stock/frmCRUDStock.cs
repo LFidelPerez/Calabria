@@ -78,7 +78,7 @@ namespace Calabria.Stock
 					}
 				};
 
-			MyOwner.sheetConnector.AppendData(GetRange, modelList);
+			MyOwner.sheetConnector.AppendData("StockItems!A:D", modelList);
 
 			DialogResult = DialogResult.OK;
 			Close();
