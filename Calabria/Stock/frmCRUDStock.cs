@@ -2,36 +2,17 @@
 using Calabria.Models;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Calabria.Stock
 {
 	public partial class FrmCRUDStock : CRUDForm
 	{
-		private readonly string sheetName = "StockItems";
-		private readonly string rangeFirstColumn = "A";
-		private readonly string rangeLastColumn = "D";
-		private readonly string range = "{sheetName}!{rangeFirstColumn}{indexOffset}:{rangeLastColumn}";
-		private readonly int indexOffset = 2;
+		//private readonly int _indexOffset = 2;
+		private readonly int _itemOffset;
 
 		private int ItemId { get; set; }
 		private frmStockItemList MyOwner { get { return (frmStockItemList)Owner; } }
-
-		private string GetRange
-		{
-			get
-			{
-				StringBuilder sb = new StringBuilder(range);
-
-				sb.Replace("{sheetName}", sheetName);
-				sb.Replace("{rangeFirstColumn}", rangeFirstColumn);
-				sb.Replace("{indexOffset}", indexOffset.ToString());
-				sb.Replace("{rangeLastColumn}", rangeLastColumn);
-
-				return sb.ToString();
-			}
-		}
 
 		public FrmCRUDStock(CRUDStateEnum stateEnum, int itemOffset, StockItem stockItem) : base(stateEnum)
 		{
@@ -40,12 +21,11 @@ namespace Calabria.Stock
 			switch (CRUDState)
 			{
 				case CRUDStateEnum.Create:
-					indexOffset += itemOffset;
 					ItemId = itemOffset + 1;
 					btnUpdate.Enabled = false;
 					break;
 				case CRUDStateEnum.Update:
-					indexOffset += itemOffset;
+					_itemOffset = itemOffset;
 					ItemId = itemOffset;
 					btnSave.Enabled = false;
 					break;
@@ -78,7 +58,8 @@ namespace Calabria.Stock
 					}
 				};
 
-			MyOwner.sheetConnector.AppendData("StockItems!A:D", modelList);
+			MyOwner.sheetConnector.SpreadSheetRange.FirstIndexOffset = int.MinValue;
+			MyOwner.sheetConnector.AppendData(modelList);
 
 			DialogResult = DialogResult.OK;
 			Close();
@@ -99,7 +80,10 @@ namespace Calabria.Stock
 					}
 				};
 
-			MyOwner.sheetConnector.UpdateData(GetRange, modelList);
+			var itemOffset = MyOwner.sheetConnector.SpreadSheetRange.InitialFirstIndexOffset + _itemOffset;
+
+			MyOwner.sheetConnector.SpreadSheetRange.FirstIndexOffset = itemOffset;
+			MyOwner.sheetConnector.UpdateData(modelList);
 
 			DialogResult = DialogResult.OK;
 			Close();
@@ -120,7 +104,7 @@ namespace Calabria.Stock
 					}
 				};
 
-			MyOwner.sheetConnector.DeleteData(GetRange, modelList);
+			MyOwner.sheetConnector.DeleteData(modelList);
 
 			DialogResult = DialogResult.OK;
 			Close();

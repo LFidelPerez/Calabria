@@ -1,5 +1,4 @@
-﻿using Calabria.Helpers.Google;
-using Calabria.Models;
+﻿using Calabria.Models;
 using Calabria.Services.Google;
 using System;
 using System.Collections.Generic;
@@ -51,6 +50,7 @@ namespace Calabria.Stock
 			//var range = "StockItems!A2:D";
 
 			dgvIStockitems.Rows.Clear();
+			sheetConnector.SpreadSheetRange.Init();
 
 			var rangeValues = sheetConnector.GetData();
 

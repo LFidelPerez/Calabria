@@ -12,21 +12,21 @@ namespace Calabria.Services.Google
 {
 	public class SpreadSheetConnector
 	{
-
-		private string[] _scopes = { SheetsService.Scope.Spreadsheets }; // Change this if you're accessing Drive or Docs
+		// Change this if you're accessing Drive or Docs
+		private string[] _scopes = { SheetsService.Scope.Spreadsheets };
 		private string _applicationName = "My Application Name from Google API Project ";
 		private string _spreadsheetId = "1UaUcWbk_aMYG05KZJdu3ZiztWiNfxfZ6hh14skKKF7k";
 		public readonly SpreadSheetRange SpreadSheetRange;
 		private SheetsService _sheetsService;
 
-		public SpreadSheetConnector(string sheetName, string firstColumn, string lastColumn, int firstIndexOffset) {
-			SpreadSheetRange = new SpreadSheetRange()
-			{
-				SheetName = sheetName,
-				FirstColumn = firstColumn,
-				LastColumn = lastColumn,
-				FirstIndexOffset = firstIndexOffset
-			};
+		public SpreadSheetConnector(string sheetName, string firstColumn, string lastColumn, int firstIndexOffset)
+		{
+			SpreadSheetRange = new SpreadSheetRange(
+				sheetName: sheetName,
+				firstColumn: firstColumn,
+				lastColumn: lastColumn,
+				firstIndexOffset: firstIndexOffset
+			);
 		}
 		public SpreadSheetConnector(string applicationName, string spreadsheetId, SheetsService sheetsService)
 		{
@@ -79,8 +79,10 @@ namespace Calabria.Services.Google
 			return requestList.Execute();
 		}
 
-		public string AppendData(string range, List<IList<object>> data)
+		public string AppendData(List<IList<object>> data)
 		{
+			string range = SpreadSheetRange.ToString();
+
 			var dataValueRange = new ValueRange
 			{
 				Range = range,
@@ -96,9 +98,10 @@ namespace Calabria.Services.Google
 		}
 
 		// Pass in your data as a list of a list (2-D lists are equivalent to the 2-D spreadsheet structure)
-		public string UpdateData(string range, List<IList<object>> data)
+		public string UpdateData(List<IList<object>> data)
 		{
 			//string _range = "Data-Ingreso!A1:Y";
+			string range = SpreadSheetRange.ToString();
 			string valueInputOption = "RAW";
 
 			// The new values to apply to the spreadsheet.
@@ -123,9 +126,9 @@ namespace Calabria.Services.Google
 			return JsonConvert.SerializeObject(response);
 		}
 
-		public void DeleteData(string range, List<IList<object>> data)
+		public void DeleteData(List<IList<object>> data)
 		{
-			UpdateData(range, data);
+			UpdateData(data);
 		}
 	}
 }
