@@ -30,15 +30,15 @@
 		{
 			this.label1 = new System.Windows.Forms.Label();
 			this.dgvIStockitems = new System.Windows.Forms.DataGridView();
+			this.button1 = new System.Windows.Forms.Button();
+			this.btn_addStockItem = new System.Windows.Forms.Button();
+			this.lbl_searchStockItems = new System.Windows.Forms.Label();
+			this.txt_searchStockItems = new System.Windows.Forms.TextBox();
 			this.ItemId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ItemType = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ItemDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-			this.button1 = new System.Windows.Forms.Button();
-			this.btn_addStockItem = new System.Windows.Forms.Button();
-			this.lbl_searchStockItems = new System.Windows.Forms.Label();
-			this.txt_searchStockItems = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.dgvIStockitems)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -73,6 +73,42 @@
 			this.dgvIStockitems.Size = new System.Drawing.Size(1020, 316);
 			this.dgvIStockitems.TabIndex = 2;
 			this.dgvIStockitems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIStockitems_CellContentClick);
+			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(915, 7);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(117, 56);
+			this.button1.TabIndex = 3;
+			this.button1.Text = "Cerrar";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.Button1_Click);
+			// 
+			// btn_addStockItem
+			// 
+			this.btn_addStockItem.Location = new System.Drawing.Point(12, 64);
+			this.btn_addStockItem.Name = "btn_addStockItem";
+			this.btn_addStockItem.Size = new System.Drawing.Size(75, 31);
+			this.btn_addStockItem.TabIndex = 4;
+			this.btn_addStockItem.Text = "Agregar";
+			this.btn_addStockItem.UseVisualStyleBackColor = true;
+			this.btn_addStockItem.Click += new System.EventHandler(this.btn_addStockItem_Click);
+			// 
+			// lbl_searchStockItems
+			// 
+			this.lbl_searchStockItems.AutoSize = true;
+			this.lbl_searchStockItems.Location = new System.Drawing.Point(100, 71);
+			this.lbl_searchStockItems.Name = "lbl_searchStockItems";
+			this.lbl_searchStockItems.Size = new System.Drawing.Size(52, 16);
+			this.lbl_searchStockItems.TabIndex = 5;
+			this.lbl_searchStockItems.Text = "Buscar:";
+			// 
+			// txt_searchStockItems
+			// 
+			this.txt_searchStockItems.Location = new System.Drawing.Point(158, 68);
+			this.txt_searchStockItems.Name = "txt_searchStockItems";
+			this.txt_searchStockItems.Size = new System.Drawing.Size(242, 22);
+			this.txt_searchStockItems.TabIndex = 6;
 			// 
 			// ItemId
 			// 
@@ -116,42 +152,6 @@
 			this.Edit.Text = "Editar";
 			this.Edit.UseColumnTextForButtonValue = true;
 			this.Edit.Width = 125;
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(915, 7);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(117, 56);
-			this.button1.TabIndex = 3;
-			this.button1.Text = "Cerrar";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.Button1_Click);
-			// 
-			// btn_addStockItem
-			// 
-			this.btn_addStockItem.Location = new System.Drawing.Point(12, 64);
-			this.btn_addStockItem.Name = "btn_addStockItem";
-			this.btn_addStockItem.Size = new System.Drawing.Size(75, 31);
-			this.btn_addStockItem.TabIndex = 4;
-			this.btn_addStockItem.Text = "Agregar";
-			this.btn_addStockItem.UseVisualStyleBackColor = true;
-			this.btn_addStockItem.Click += new System.EventHandler(this.btn_addStockItem_Click);
-			// 
-			// lbl_searchStockItems
-			// 
-			this.lbl_searchStockItems.AutoSize = true;
-			this.lbl_searchStockItems.Location = new System.Drawing.Point(100, 71);
-			this.lbl_searchStockItems.Name = "lbl_searchStockItems";
-			this.lbl_searchStockItems.Size = new System.Drawing.Size(52, 16);
-			this.lbl_searchStockItems.TabIndex = 5;
-			this.lbl_searchStockItems.Text = "Buscar:";
-			// 
-			// txt_searchStockItems
-			// 
-			this.txt_searchStockItems.Location = new System.Drawing.Point(158, 68);
-			this.txt_searchStockItems.Name = "txt_searchStockItems";
-			this.txt_searchStockItems.Size = new System.Drawing.Size(242, 22);
-			this.txt_searchStockItems.TabIndex = 6;
 			// 
 			// frmStockItemList
 			// 

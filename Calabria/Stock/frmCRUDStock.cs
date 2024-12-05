@@ -14,6 +14,29 @@ namespace Calabria.Stock
 		private int ItemId { get; set; }
 		private frmStockItemList MyOwner { get { return (frmStockItemList)Owner; } }
 
+		private List<IList<object>> GetItemData(bool delete = false)
+		{
+			var item = new StockItem
+			{
+				Id = ItemId,
+				Name = txtName.Text,
+				Description = txtDescription.Text,
+				ItemType = txtType.Text
+			};
+
+			return new List<IList<object>>
+				{
+					new List<object>
+					{
+						delete,
+						item.Id,
+						item.ItemType,
+						item.Name,
+						item.Description
+					}
+				};
+		}
+
 		public FrmCRUDStock(CRUDStateEnum stateEnum, int itemOffset, StockItem stockItem) : base(stateEnum)
 		{
 			InitializeComponent();
@@ -26,10 +49,11 @@ namespace Calabria.Stock
 					break;
 				case CRUDStateEnum.Update:
 					_itemOffset = itemOffset;
-					ItemId = itemOffset;
+					ItemId = (int)stockItem.Id;
 					btnSave.Enabled = false;
 					break;
 				case CRUDStateEnum.Delete:
+					_itemOffset = itemOffset;
 					break;
 				default:
 					throw new Exception("CRUD State invalid");
@@ -43,23 +67,17 @@ namespace Calabria.Stock
 			}
 		}
 
+		private void SetUpdateIndex()
+		{
+			var itemOffset = MyOwner.sheetConnector.SpreadSheetRange.InitialFirstIndexOffset + _itemOffset;
+
+			MyOwner.sheetConnector.SpreadSheetRange.FirstIndexOffset = itemOffset;
+		}
+
 		private void btnSave_Click(object sender, EventArgs e)
 		{
-			var item = new StockItem { Id = ItemId, Name = txtName.Text, Description = txtDescription.Text, ItemType = txtType.Text };
-
-			var modelList = new List<IList<object>>
-				{
-					new List<object>
-					{
-						item.Id,
-						item.ItemType,
-						item.Name,
-						item.Description
-					}
-				};
-
 			MyOwner.sheetConnector.SpreadSheetRange.FirstIndexOffset = int.MinValue;
-			MyOwner.sheetConnector.AppendData(modelList);
+			MyOwner.sheetConnector.AppendData(GetItemData());
 
 			DialogResult = DialogResult.OK;
 			Close();
@@ -67,23 +85,9 @@ namespace Calabria.Stock
 
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
-			var item = new StockItem { Id = ItemId, Name = txtName.Text, Description = txtDescription.Text, ItemType = txtType.Text };
-
-			var modelList = new List<IList<object>>
-				{
-					new List<object>
-					{
-						item.Id,
-						item.ItemType,
-						item.Name,
-						item.Description
-					}
-				};
-
-			var itemOffset = MyOwner.sheetConnector.SpreadSheetRange.InitialFirstIndexOffset + _itemOffset;
-
-			MyOwner.sheetConnector.SpreadSheetRange.FirstIndexOffset = itemOffset;
-			MyOwner.sheetConnector.UpdateData(modelList);
+			SetUpdateIndex();
+			
+			MyOwner.sheetConnector.UpdateData(GetItemData());
 
 			DialogResult = DialogResult.OK;
 			Close();
@@ -91,20 +95,9 @@ namespace Calabria.Stock
 
 		private void btnDelete_Click(object sender, EventArgs e)
 		{
-			var item = new StockItem { Id = ItemId, Name = txtName.Text, Description = txtDescription.Text, ItemType = txtType.Text };
+			SetUpdateIndex();
 
-			var modelList = new List<IList<object>>
-				{
-					new List<object>
-					{
-						item.Id,
-						item.ItemType,
-						item.Name,
-						item.Description
-					}
-				};
-
-			MyOwner.sheetConnector.DeleteData(modelList);
+			MyOwner.sheetConnector.DeleteData(GetItemData(true));
 
 			DialogResult = DialogResult.OK;
 			Close();

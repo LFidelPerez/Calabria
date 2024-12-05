@@ -18,7 +18,7 @@ namespace Calabria.Stock
 			sheetConnector = new SpreadSheetConnector(
 				sheetName: "StockItems",
 				firstColumn: "A",
-				lastColumn: "D",
+				lastColumn: "E",
 				firstIndexOffset: 2
 			);
 			sheetConnector.ConnectToGoogle();
@@ -67,14 +67,22 @@ namespace Calabria.Stock
 
 				stockItems.Add(new StockItem()
 				{
-					Id = int.Parse((string)item[0]),
-					Description = (string)item[1],
-					Name = (string)item[2],
-					ItemType = (string)item[3]
+					IsDeleted = bool.Parse((string)item[0]),
+					Id = int.Parse((string)item[1]),
+					ItemType = (string)item[2],
+					Name = (string)item[3],
+					Description = (string)item[4]
 				});
 
-
-				dgvIStockitems.Rows.Add(stockItems[i].Id, stockItems[i].Name, stockItems[i].ItemType, stockItems[i].Description);
+				if (!stockItems[i].IsDeleted)
+				{
+					dgvIStockitems.Rows.Add(
+						stockItems[i].Id, 
+						stockItems[i].Name, 
+						stockItems[i].ItemType, 
+						stockItems[i].Description
+					);
+				}
 			}
 		}
 
@@ -87,9 +95,9 @@ namespace Calabria.Stock
 			{
 				var item = dgvIStockitems.Rows[e.RowIndex];
 				var id = int.Parse(item.Cells[0].Value.ToString());
-				var description = (string)item.Cells[3].Value;
 				var name = (string)item.Cells[1].Value;
 				var itemType = (string)item.Cells[2].Value;
+				var description = (string)item.Cells[3].Value;
 
 				_frmStockitem = new FrmCRUDStock(CRUDStateEnum.Update, e.RowIndex, new StockItem()
 				{
