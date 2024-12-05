@@ -12,7 +12,7 @@ namespace Calabria
 		public frmMain()
 		{
 			InitializeComponent();
-			sheetConnector = new SpreadSheetConnector();
+			//sheetConnector = new SpreadSheetConnector();
 		}
 
 		private void Button1_Click(object sender, EventArgs e)

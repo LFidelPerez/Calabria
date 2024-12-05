@@ -11,22 +11,18 @@ namespace Calabria.Stock
 	public partial class frmStockItemList : Form
 	{
 		public readonly SpreadSheetConnector sheetConnector;
-		public readonly SpreadSheetRange spreadSheetRange;
 		private FrmCRUDStock _frmStockitem;
 
 		public frmStockItemList()
 		{
 			InitializeComponent();
-			sheetConnector = new SpreadSheetConnector();
+			sheetConnector = new SpreadSheetConnector(
+				sheetName: "StockItems",
+				firstColumn: "A",
+				lastColumn: "D",
+				firstIndexOffset: 2
+			);
 			sheetConnector.ConnectToGoogle();
-
-			spreadSheetRange = new SpreadSheetRange()
-			{
-				SheetName = "StockItems",
-				FirstColumn = "A",
-				FirstIndexOffset = 2,
-				LastColumn = "D"
-			};
 		}
 
 		private void Button1_Click(object sender, EventArgs e)
@@ -56,7 +52,7 @@ namespace Calabria.Stock
 
 			dgvIStockitems.Rows.Clear();
 
-			var rangeValues = sheetConnector.GetData(spreadSheetRange.ToString());
+			var rangeValues = sheetConnector.GetData();
 
 			// Do nothing if range has no values
 			if (rangeValues.Values == null)

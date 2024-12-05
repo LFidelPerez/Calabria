@@ -1,4 +1,5 @@
-﻿using Google.Apis.Auth.OAuth2;
+﻿using Calabria.Helpers.Google;
+using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
 using Google.Apis.Sheets.v4;
 using Google.Apis.Sheets.v4.Data;
@@ -15,9 +16,18 @@ namespace Calabria.Services.Google
 		private string[] _scopes = { SheetsService.Scope.Spreadsheets }; // Change this if you're accessing Drive or Docs
 		private string _applicationName = "My Application Name from Google API Project ";
 		private string _spreadsheetId = "1UaUcWbk_aMYG05KZJdu3ZiztWiNfxfZ6hh14skKKF7k";
+		public readonly SpreadSheetRange SpreadSheetRange;
 		private SheetsService _sheetsService;
 
-		public SpreadSheetConnector() { }
+		public SpreadSheetConnector(string sheetName, string firstColumn, string lastColumn, int firstIndexOffset) {
+			SpreadSheetRange = new SpreadSheetRange()
+			{
+				SheetName = sheetName,
+				FirstColumn = firstColumn,
+				LastColumn = lastColumn,
+				FirstIndexOffset = firstIndexOffset
+			};
+		}
 		public SpreadSheetConnector(string applicationName, string spreadsheetId, SheetsService sheetsService)
 		{
 			_applicationName = applicationName;
@@ -62,9 +72,9 @@ namespace Calabria.Services.Google
 			return null;
 		}
 
-		public ValueRange GetData(string range)
+		public ValueRange GetData()
 		{
-			var requestList = _sheetsService.Spreadsheets.Values.Get(_spreadsheetId, range);
+			var requestList = _sheetsService.Spreadsheets.Values.Get(_spreadsheetId, SpreadSheetRange.ToString());
 
 			return requestList.Execute();
 		}

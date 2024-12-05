@@ -66,5 +66,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Calabria.Helpers\Calabria.Helpers.csproj">
+      <Project>{88584874-09D0-458C-B100-A7CB02C77975}</Project>
+      <Name>Calabria.Helpers</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
