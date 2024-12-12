@@ -37,6 +37,7 @@
 			this.btnSave = new System.Windows.Forms.Button();
 			this.btnUpdate = new System.Windows.Forms.Button();
 			this.btnDelete = new System.Windows.Forms.Button();
+			this.cmbType = new System.Windows.Forms.ComboBox();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -57,7 +58,7 @@
 			// 
 			// txtType
 			// 
-			this.txtType.Location = new System.Drawing.Point(121, 58);
+			this.txtType.Location = new System.Drawing.Point(121, 227);
 			this.txtType.Name = "txtType";
 			this.txtType.Size = new System.Drawing.Size(192, 22);
 			this.txtType.TabIndex = 3;
@@ -117,11 +118,20 @@
 			this.btnDelete.UseVisualStyleBackColor = true;
 			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
-			// frmCRUDStock
+			// cmbType
+			// 
+			this.cmbType.FormattingEnabled = true;
+			this.cmbType.Location = new System.Drawing.Point(121, 56);
+			this.cmbType.Name = "cmbType";
+			this.cmbType.Size = new System.Drawing.Size(192, 24);
+			this.cmbType.TabIndex = 9;
+			// 
+			// FrmCRUDStock
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(377, 181);
+			this.ClientSize = new System.Drawing.Size(377, 295);
+			this.Controls.Add(this.cmbType);
 			this.Controls.Add(this.btnDelete);
 			this.Controls.Add(this.btnUpdate);
 			this.Controls.Add(this.btnSave);
@@ -131,8 +141,10 @@
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.txtName);
 			this.Controls.Add(this.label1);
-			this.Name = "frmCRUDStock";
+			this.Name = "FrmCRUDStock";
 			this.Text = "frmStockItem";
+			this.Load += new System.EventHandler(this.FrmCRUDStock_Load);
+			this.Shown += new System.EventHandler(this.FrmCRUDStock_Shown);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -149,5 +161,6 @@
 		private System.Windows.Forms.Button btnSave;
 		private System.Windows.Forms.Button btnUpdate;
 		private System.Windows.Forms.Button btnDelete;
+		private System.Windows.Forms.ComboBox cmbType;
 	}
 }

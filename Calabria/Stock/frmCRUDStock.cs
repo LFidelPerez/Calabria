@@ -68,6 +68,21 @@ namespace Calabria.Stock
 			}
 		}
 
+		private void FrmCRUDStock_Load(object sender, EventArgs e)
+		{
+			SetUpdateIndex();
+			InitCmbItemType();
+		}
+
+		private void InitCmbItemType() {
+			cmbType.Items.Add("valor 1");
+			cmbType.Items.Add("busco 2");
+			cmbType.Items.Add("algo 3");
+			cmbType.Items.Add("4 que");
+			cmbType.Items.Add("sin 5 sentir");
+		}
+		
+
 		private void SetUpdateIndex()
 		{
 			var itemOffset = MyOwner.sheetConnector.SpreadSheetRange.InitialFirstIndexOffset + _itemOffset;
@@ -85,9 +100,7 @@ namespace Calabria.Stock
 		}
 
 		private void btnUpdate_Click(object sender, EventArgs e)
-		{
-			SetUpdateIndex();
-			
+		{	
 			MyOwner.sheetConnector.UpdateData(GetItemData());
 
 			DialogResult = DialogResult.OK;
@@ -96,8 +109,6 @@ namespace Calabria.Stock
 
 		private void btnDelete_Click(object sender, EventArgs e)
 		{
-			SetUpdateIndex();
-
 			MyOwner.sheetConnector.DeleteData(GetItemData(true));
 
 			DialogResult = DialogResult.OK;
