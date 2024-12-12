@@ -115,30 +115,30 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Stock\frmStockMain.cs">
+    <Compile Include="Stock\Items\frmStockMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Stock\frmStockMain.Designer.cs">
+    <Compile Include="Stock\Items\frmStockMain.Designer.cs">
       <DependentUpon>frmStockMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stock\frmCRUDStock.cs">
+    <Compile Include="Stock\Items\frmCRUDStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Stock\frmCRUDStock.Designer.cs">
+    <Compile Include="Stock\Items\frmCRUDStock.Designer.cs">
       <DependentUpon>frmCRUDStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="Stock\frmStockItemList.cs">
+    <Compile Include="Stock\Items\frmStockItemList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Stock\frmStockItemList.Designer.cs">
+    <Compile Include="Stock\Items\frmStockItemList.Designer.cs">
       <DependentUpon>frmStockItemList.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Stock\frmStockMain.resx">
+    <EmbeddedResource Include="Stock\Items\frmStockMain.resx">
       <DependentUpon>frmStockMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -150,10 +150,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Stock\frmCRUDStock.resx">
+    <EmbeddedResource Include="Stock\Items\frmCRUDStock.resx">
       <DependentUpon>frmCRUDStock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Stock\frmStockItemList.resx">
+    <EmbeddedResource Include="Stock\Items\frmStockItemList.resx">
       <DependentUpon>frmStockItemList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="blazor3.json">
