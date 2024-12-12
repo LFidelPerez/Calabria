@@ -115,6 +115,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Stock\frmStockMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\frmStockMain.Designer.cs">
+      <DependentUpon>frmStockMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stock\Items\frmStockMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     </Compile>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\frmStockMain.resx">
+      <DependentUpon>frmStockMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stock\Items\frmStockMain.resx">
       <DependentUpon>frmStockMain.cs</DependentUpon>
