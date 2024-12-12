@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace Calabria.Stock
+namespace Calabria.Stock.Items
 {
 	public partial class FrmCRUDStock : CRUDForm
 	{

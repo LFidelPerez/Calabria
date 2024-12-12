@@ -1,4 +1,4 @@
-﻿namespace Calabria.Stock
+﻿namespace Calabria.Stock.Items
 {
 	partial class FrmCRUDStock
 	{

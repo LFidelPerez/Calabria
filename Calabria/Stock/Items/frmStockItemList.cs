@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using static Calabria.Base.Forms.CRUDForm;
 
-namespace Calabria.Stock
+namespace Calabria.Stock.Items
 {
 	public partial class frmStockItemList : BaseForm
 	{
