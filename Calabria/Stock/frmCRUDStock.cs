@@ -19,9 +19,9 @@ namespace Calabria.Stock
 			var item = new StockItem
 			{
 				Id = ItemId,
-				Name = txtName.Text,
-				Description = txtDescription.Text,
-				ItemType = txtType.Text
+				Name = txtName.Text.Trim(),
+				Description = txtDescription.Text.Trim(),
+				ItemType = txtType.Text.Trim()
 			};
 
 			return new List<IList<object>>
