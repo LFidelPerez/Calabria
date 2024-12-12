@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Calabria.Base.Forms
 {
-	public partial class CRUDForm : Form
+	public partial class CRUDForm : BaseForm
 	{
 		public enum CRUDStateEnum
 		{

@@ -1,10 +1,10 @@
-﻿using Calabria.Stock;
+﻿using Calabria.Base.Forms;
+using Calabria.Stock;
 using System;
-using System.Windows.Forms;
 
 namespace Calabria
 {
-	public partial class frmStockMain : Form
+	public partial class frmStockMain : BaseForm
 	{
 		private frmStockItemList _frmStockItemList;
 

@@ -1,4 +1,5 @@
-﻿using Calabria.Models;
+﻿using Calabria.Base.Forms;
+using Calabria.Models;
 using Calabria.Services.Google;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using static Calabria.Base.Forms.CRUDForm;
 
 namespace Calabria.Stock
 {
-	public partial class frmStockItemList : Form
+	public partial class frmStockItemList : BaseForm
 	{
 		public readonly SpreadSheetConnector sheetConnector;
 		private FrmCRUDStock _frmStockitem;

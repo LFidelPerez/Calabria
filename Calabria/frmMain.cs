@@ -1,12 +1,13 @@
-﻿using Calabria.Services.Google;
+﻿using Calabria.Base.Forms;
+using Calabria.Services.Google;
 using System;
 using System.Windows.Forms;
 
 namespace Calabria
 {
-	public partial class frmMain : Form
+	public partial class frmMain : BaseForm
 	{
-		private readonly SpreadSheetConnector sheetConnector;
+		//private readonly SpreadSheetConnector sheetConnector;
 		private frmStockMain _frmStock;
 
 		public frmMain()
