@@ -8,13 +8,13 @@ using static Calabria.Base.Forms.CRUDForm;
 
 namespace Calabria.Stock.Items
 {
-	public partial class frmStockItemList : BaseForm
+	public partial class frmList : BaseForm
 	{
 		public readonly SpreadSheetConnector sheetConnector;
 		private FrmCRUDStock _frmStockitem;
 		private int _maxItemId = 1;
 
-		public frmStockItemList()
+		public frmList()
 		{
 			InitializeComponent();
 			sheetConnector = new SpreadSheetConnector(

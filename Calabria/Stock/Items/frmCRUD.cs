@@ -9,7 +9,7 @@ namespace Calabria.Stock.Items
 	public partial class FrmCRUDStock : CRUDForm
 	{
 		private int ItemId { get; set; }
-		private frmStockItemList MyOwner { get { return (frmStockItemList)Owner; } }
+		private frmList MyOwner { get { return (frmList)Owner; } }
 		private StockItem _stockItem;
 		private int _itemOffset;
 

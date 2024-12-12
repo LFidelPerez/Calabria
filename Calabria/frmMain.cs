@@ -1,14 +1,12 @@
 ﻿using Calabria.Base.Forms;
-using Calabria.Services.Google;
 using System;
-using System.Windows.Forms;
 
 namespace Calabria
 {
 	public partial class frmMain : BaseForm
 	{
 		//private readonly SpreadSheetConnector sheetConnector;
-		private frmStockMain _frmStock;
+		private Stock.frmMain _frmStockMain;
 
 		public frmMain()
 		{
@@ -18,8 +16,8 @@ namespace Calabria
 
 		private void Button1_Click(object sender, EventArgs e)
 		{
-			_frmStock = new frmStockMain();
-			_frmStock.ShowDialog();
+			_frmStockMain = new Stock.frmMain();
+			_frmStockMain.ShowDialog();
 		}
 		/*
 		public void AddTestData()
