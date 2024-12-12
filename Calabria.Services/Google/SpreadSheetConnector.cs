@@ -18,6 +18,7 @@ namespace Calabria.Services.Google
 		private string _spreadsheetId = "1UaUcWbk_aMYG05KZJdu3ZiztWiNfxfZ6hh14skKKF7k";
 		public readonly SpreadSheetRange SpreadSheetRange;
 		private SheetsService _sheetsService;
+		private ValueRange _requestData;
 
 		public SpreadSheetConnector(string sheetName, string firstColumn, string lastColumn, int firstIndexOffset)
 		{
@@ -56,12 +57,12 @@ namespace Calabria.Services.Google
 			});
 		}
 
-		public int? FindRowIndexById(ValueRange data, int id)
-		{
-			for (int i = 0; data.Values.Count > i; i++)
+		public int? FindRowIndexById(int id)
+		{	
+			for (int i = 0; _requestData.Values.Count > i; i++)
 			{
-				var item = data.Values[i];
-				var itemId = int.Parse((string)item[0]);
+				var item = _requestData.Values[i];
+				var itemId = int.Parse((string)item[2]);
 
 				if (itemId == id)
 				{
@@ -76,7 +77,9 @@ namespace Calabria.Services.Google
 		{
 			var requestList = _sheetsService.Spreadsheets.Values.Get(_spreadsheetId, SpreadSheetRange.ToString());
 
-			return requestList.Execute();
+			_requestData = requestList.Execute();
+
+			return _requestData;
 		}
 
 		public string AppendData(List<IList<object>> data)

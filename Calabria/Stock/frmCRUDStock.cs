@@ -29,6 +29,7 @@ namespace Calabria.Stock
 					new List<object>
 					{
 						delete,
+						delete?DateTime.Now:DateTime.MinValue,
 						item.Id,
 						item.ItemType,
 						item.Name,

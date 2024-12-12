@@ -11,6 +11,7 @@ namespace Calabria.Stock
 	{
 		public readonly SpreadSheetConnector sheetConnector;
 		private FrmCRUDStock _frmStockitem;
+		private int _maxItemId = 1;
 
 		public frmStockItemList()
 		{
@@ -18,7 +19,7 @@ namespace Calabria.Stock
 			sheetConnector = new SpreadSheetConnector(
 				sheetName: "StockItems",
 				firstColumn: "A",
-				lastColumn: "E",
+				lastColumn: "F",
 				firstIndexOffset: 2
 			);
 			sheetConnector.ConnectToGoogle();
@@ -36,7 +37,7 @@ namespace Calabria.Stock
 
 		private void btn_addStockItem_Click(object sender, EventArgs e)
 		{
-			_frmStockitem = new FrmCRUDStock(CRUDStateEnum.Create, dgvIStockitems.Rows.Count, null);
+			_frmStockitem = new FrmCRUDStock(CRUDStateEnum.Create, _maxItemId, null);
 			var result = _frmStockitem.ShowDialog(this);
 
 			if (result == DialogResult.OK)
@@ -68,18 +69,20 @@ namespace Calabria.Stock
 				stockItems.Add(new StockItem()
 				{
 					IsDeleted = bool.Parse((string)item[0]),
-					Id = int.Parse((string)item[1]),
-					ItemType = (string)item[2],
-					Name = (string)item[3],
-					Description = (string)item[4]
+					Id = int.Parse((string)item[2]),
+					ItemType = (string)item[3],
+					Name = (string)item[4],
+					Description = (string)item[5]
 				});
+
+				_maxItemId = (int)stockItems[i].Id;
 
 				if (!stockItems[i].IsDeleted)
 				{
 					dgvIStockitems.Rows.Add(
-						stockItems[i].Id, 
-						stockItems[i].Name, 
-						stockItems[i].ItemType, 
+						stockItems[i].Id,
+						stockItems[i].Name,
+						stockItems[i].ItemType,
 						stockItems[i].Description
 					);
 				}
@@ -98,8 +101,9 @@ namespace Calabria.Stock
 				var name = (string)item.Cells[1].Value;
 				var itemType = (string)item.Cells[2].Value;
 				var description = (string)item.Cells[3].Value;
+				var rowIndex = sheetConnector.FindRowIndexById(id);
 
-				_frmStockitem = new FrmCRUDStock(CRUDStateEnum.Update, e.RowIndex, new StockItem()
+				_frmStockitem = new FrmCRUDStock(CRUDStateEnum.Update, (int)rowIndex, new StockItem()
 				{
 					Id = id,
 					Description = description,
