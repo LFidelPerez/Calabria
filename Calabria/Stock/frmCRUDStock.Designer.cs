@@ -30,7 +30,6 @@
 		{
 			this.label1 = new System.Windows.Forms.Label();
 			this.txtName = new System.Windows.Forms.TextBox();
-			this.txtType = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.txtDescription = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
@@ -56,13 +55,6 @@
 			this.txtName.Size = new System.Drawing.Size(192, 22);
 			this.txtName.TabIndex = 1;
 			// 
-			// txtType
-			// 
-			this.txtType.Location = new System.Drawing.Point(121, 227);
-			this.txtType.Name = "txtType";
-			this.txtType.Size = new System.Drawing.Size(192, 22);
-			this.txtType.TabIndex = 3;
-			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
@@ -77,7 +69,7 @@
 			this.txtDescription.Location = new System.Drawing.Point(121, 86);
 			this.txtDescription.Name = "txtDescription";
 			this.txtDescription.Size = new System.Drawing.Size(192, 22);
-			this.txtDescription.TabIndex = 5;
+			this.txtDescription.TabIndex = 3;
 			// 
 			// label3
 			// 
@@ -120,31 +112,31 @@
 			// 
 			// cmbType
 			// 
+			this.cmbType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+			this.cmbType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
 			this.cmbType.FormattingEnabled = true;
 			this.cmbType.Location = new System.Drawing.Point(121, 56);
 			this.cmbType.Name = "cmbType";
 			this.cmbType.Size = new System.Drawing.Size(192, 24);
-			this.cmbType.TabIndex = 9;
+			this.cmbType.TabIndex = 2;
 			// 
 			// FrmCRUDStock
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(377, 295);
+			this.ClientSize = new System.Drawing.Size(377, 161);
 			this.Controls.Add(this.cmbType);
 			this.Controls.Add(this.btnDelete);
 			this.Controls.Add(this.btnUpdate);
 			this.Controls.Add(this.btnSave);
 			this.Controls.Add(this.txtDescription);
 			this.Controls.Add(this.label3);
-			this.Controls.Add(this.txtType);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.txtName);
 			this.Controls.Add(this.label1);
 			this.Name = "FrmCRUDStock";
 			this.Text = "frmStockItem";
 			this.Load += new System.EventHandler(this.FrmCRUDStock_Load);
-			this.Shown += new System.EventHandler(this.FrmCRUDStock_Shown);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -154,7 +146,6 @@
 
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox txtName;
-		private System.Windows.Forms.TextBox txtType;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox txtDescription;
 		private System.Windows.Forms.Label label3;

@@ -8,11 +8,10 @@ namespace Calabria.Stock
 {
 	public partial class FrmCRUDStock : CRUDForm
 	{
-		//private readonly int _indexOffset = 2;
-		private readonly int _itemOffset;
-
 		private int ItemId { get; set; }
 		private frmStockItemList MyOwner { get { return (frmStockItemList)Owner; } }
+		private StockItem _stockItem;
+		private int _itemOffset;
 
 		private List<IList<object>> GetItemData(bool delete = false)
 		{
@@ -21,7 +20,7 @@ namespace Calabria.Stock
 				Id = ItemId,
 				Name = txtName.Text.Trim(),
 				Description = txtDescription.Text.Trim(),
-				ItemType = txtType.Text.Trim()
+				ItemType = cmbType.Text.Trim()
 			};
 
 			return new List<IList<object>>
@@ -42,46 +41,44 @@ namespace Calabria.Stock
 		{
 			InitializeComponent();
 
-			switch (CRUDState)
-			{
-				case CRUDStateEnum.Create:
-					ItemId = itemOffset + 1;
-					btnUpdate.Enabled = false;
-					break;
-				case CRUDStateEnum.Update:
-					_itemOffset = itemOffset;
-					ItemId = (int)stockItem.Id;
-					btnSave.Enabled = false;
-					break;
-				case CRUDStateEnum.Delete:
-					_itemOffset = itemOffset;
-					break;
-				default:
-					throw new Exception("CRUD State invalid");
-			}
-
-			if (stockItem != null)
-			{
-				txtName.Text = stockItem.Name;
-				txtDescription.Text = stockItem.Description;
-				txtType.Text = stockItem.ItemType;
-			}
+			_stockItem = stockItem;
+			_itemOffset = itemOffset;
 		}
 
 		private void FrmCRUDStock_Load(object sender, EventArgs e)
 		{
+			switch (CRUDState)
+			{
+				case CRUDStateEnum.Create:
+					ItemId = _itemOffset + 1;
+					btnUpdate.Enabled = false;
+					break;
+				case CRUDStateEnum.Update:
+					ItemId = (int)_stockItem.Id;
+					btnSave.Enabled = false;
+					break;
+			}
+
 			SetUpdateIndex();
 			InitCmbItemType();
+
+			if (_stockItem != null)
+			{
+				txtName.Text = _stockItem.Name;
+				txtDescription.Text = _stockItem.Description;
+				cmbType.Text = _stockItem.ItemType;
+			}
 		}
 
-		private void InitCmbItemType() {
-			cmbType.Items.Add("valor 1");
-			cmbType.Items.Add("busco 2");
-			cmbType.Items.Add("algo 3");
-			cmbType.Items.Add("4 que");
-			cmbType.Items.Add("sin 5 sentir");
+		private void InitCmbItemType()
+		{
+			var typeList = MyOwner.sheetConnector.FilterData(3);
+
+			foreach (var item in typeList)
+			{
+				cmbType.Items.Add(item);
+			}
 		}
-		
 
 		private void SetUpdateIndex()
 		{
@@ -100,7 +97,7 @@ namespace Calabria.Stock
 		}
 
 		private void btnUpdate_Click(object sender, EventArgs e)
-		{	
+		{
 			MyOwner.sheetConnector.UpdateData(GetItemData());
 
 			DialogResult = DialogResult.OK;

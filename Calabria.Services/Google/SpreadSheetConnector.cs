@@ -6,6 +6,7 @@ using Google.Apis.Sheets.v4.Data;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 
 namespace Calabria.Services.Google
@@ -71,6 +72,23 @@ namespace Calabria.Services.Google
 			}
 
 			return null;
+		}
+
+		public List<object> FilterData(int colIndex)
+		{
+			List<object> filterData = new List<object>();
+
+			for (int i = 0; _requestData.Values.Count > i; i++)
+			{
+				var item = _requestData.Values[i];
+
+				if (!filterData.Contains(item[colIndex]))
+				{
+					filterData.Add(item[colIndex]);
+				}
+			}
+
+			return filterData;
 		}
 
 		public ValueRange GetData()

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Calabria.Base.Forms
 {
@@ -21,6 +22,16 @@ namespace Calabria.Base.Forms
 			InitializeComponent();
 
 			CRUDState = stateEnum;
+
+			switch (CRUDState)
+			{
+				case CRUDStateEnum.Create:
+				case CRUDStateEnum.Update:
+				case CRUDStateEnum.Delete:
+					break;
+				default:
+					throw new Exception("CRUD State invalid");
+			}
 		}
 	}
 }
