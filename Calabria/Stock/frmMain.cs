@@ -6,6 +6,7 @@ namespace Calabria.Stock
 	public partial class frmMain : BaseForm
 	{
 		private Items.frmList _frmStockItemList;
+		
 
 		public frmMain()
 		{
@@ -16,6 +17,11 @@ namespace Calabria.Stock
 		{
 			_frmStockItemList = new Items.frmList();
 			_frmStockItemList.ShowDialog();
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
