@@ -37,6 +37,8 @@
 			this.btnUpdate = new System.Windows.Forms.Button();
 			this.btnDelete = new System.Windows.Forms.Button();
 			this.cmbType = new System.Windows.Forms.ComboBox();
+			this.btnCancel = new System.Windows.Forms.Button();
+			this.lblTitle = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -82,7 +84,7 @@
 			// 
 			// btnSave
 			// 
-			this.btnSave.Location = new System.Drawing.Point(76, 114);
+			this.btnSave.Location = new System.Drawing.Point(40, 126);
 			this.btnSave.Name = "btnSave";
 			this.btnSave.Size = new System.Drawing.Size(75, 23);
 			this.btnSave.TabIndex = 6;
@@ -92,7 +94,7 @@
 			// 
 			// btnUpdate
 			// 
-			this.btnUpdate.Location = new System.Drawing.Point(157, 114);
+			this.btnUpdate.Location = new System.Drawing.Point(121, 126);
 			this.btnUpdate.Name = "btnUpdate";
 			this.btnUpdate.Size = new System.Drawing.Size(75, 23);
 			this.btnUpdate.TabIndex = 7;
@@ -102,7 +104,7 @@
 			// 
 			// btnDelete
 			// 
-			this.btnDelete.Location = new System.Drawing.Point(238, 114);
+			this.btnDelete.Location = new System.Drawing.Point(202, 126);
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Size = new System.Drawing.Size(75, 23);
 			this.btnDelete.TabIndex = 8;
@@ -120,11 +122,34 @@
 			this.cmbType.Size = new System.Drawing.Size(192, 24);
 			this.cmbType.TabIndex = 2;
 			// 
+			// btnCancel
+			// 
+			this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+			this.btnCancel.Location = new System.Drawing.Point(283, 126);
+			this.btnCancel.Name = "btnCancel";
+			this.btnCancel.Size = new System.Drawing.Size(75, 23);
+			this.btnCancel.TabIndex = 9;
+			this.btnCancel.Text = "Cancelar";
+			this.btnCancel.UseVisualStyleBackColor = true;
+			// 
+			// lblTitle
+			// 
+			this.lblTitle.AutoSize = true;
+			this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblTitle.Location = new System.Drawing.Point(133, 0);
+			this.lblTitle.Name = "lblTitle";
+			this.lblTitle.Size = new System.Drawing.Size(168, 29);
+			this.lblTitle.TabIndex = 10;
+			this.lblTitle.Text = "Item de Stock";
+			// 
 			// FrmCRUDStock
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.CancelButton = this.btnCancel;
 			this.ClientSize = new System.Drawing.Size(377, 161);
+			this.Controls.Add(this.lblTitle);
+			this.Controls.Add(this.btnCancel);
 			this.Controls.Add(this.cmbType);
 			this.Controls.Add(this.btnDelete);
 			this.Controls.Add(this.btnUpdate);
@@ -153,5 +178,7 @@
 		private System.Windows.Forms.Button btnUpdate;
 		private System.Windows.Forms.Button btnDelete;
 		private System.Windows.Forms.ComboBox cmbType;
+		private System.Windows.Forms.Button btnCancel;
+		private System.Windows.Forms.Label lblTitle;
 	}
 }
