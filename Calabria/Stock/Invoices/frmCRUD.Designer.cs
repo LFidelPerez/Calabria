@@ -28,11 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.label1 = new System.Windows.Forms.Label();
-			this.txtName = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
-			this.txtDescription = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
 			this.btnSave = new System.Windows.Forms.Button();
 			this.btnUpdate = new System.Windows.Forms.Button();
 			this.btnDelete = new System.Windows.Forms.Button();
@@ -40,48 +36,23 @@
 			this.btnCancel = new System.Windows.Forms.Button();
 			this.lblTitle = new System.Windows.Forms.Label();
 			this.lblDate = new System.Windows.Forms.Label();
+			this.dtpInvoiceDate = new System.Windows.Forms.DateTimePicker();
+			this.label4 = new System.Windows.Forms.Label();
+			this.txtInvoiceNumber = new System.Windows.Forms.TextBox();
+			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+			this.dgv = new System.Windows.Forms.DataGridView();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(56, 159);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(59, 16);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Nombre:";
-			// 
-			// txtName
-			// 
-			this.txtName.Location = new System.Drawing.Point(121, 156);
-			this.txtName.Name = "txtName";
-			this.txtName.Size = new System.Drawing.Size(192, 22);
-			this.txtName.TabIndex = 1;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(77, 187);
+			this.label2.Location = new System.Drawing.Point(45, 104);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(38, 16);
+			this.label2.Size = new System.Drawing.Size(71, 16);
 			this.label2.TabIndex = 2;
-			this.label2.Text = "Tipo:";
-			// 
-			// txtDescription
-			// 
-			this.txtDescription.Location = new System.Drawing.Point(121, 212);
-			this.txtDescription.Name = "txtDescription";
-			this.txtDescription.Size = new System.Drawing.Size(192, 22);
-			this.txtDescription.TabIndex = 3;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(33, 215);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(82, 16);
-			this.label3.TabIndex = 4;
-			this.label3.Text = "Descripción:";
+			this.label2.Text = "Proveedor";
 			// 
 			// btnSave
 			// 
@@ -118,9 +89,9 @@
 			this.cmbType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
 			this.cmbType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
 			this.cmbType.FormattingEnabled = true;
-			this.cmbType.Location = new System.Drawing.Point(121, 182);
+			this.cmbType.Location = new System.Drawing.Point(122, 101);
 			this.cmbType.Name = "cmbType";
-			this.cmbType.Size = new System.Drawing.Size(192, 24);
+			this.cmbType.Size = new System.Drawing.Size(200, 24);
 			this.cmbType.TabIndex = 2;
 			// 
 			// btnCancel
@@ -152,12 +123,57 @@
 			this.lblDate.TabIndex = 11;
 			this.lblDate.Text = "Fecha";
 			// 
+			// dtpInvoiceDate
+			// 
+			this.dtpInvoiceDate.Location = new System.Drawing.Point(122, 45);
+			this.dtpInvoiceDate.Name = "dtpInvoiceDate";
+			this.dtpInvoiceDate.Size = new System.Drawing.Size(200, 22);
+			this.dtpInvoiceDate.TabIndex = 12;
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(46, 71);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(70, 16);
+			this.label4.TabIndex = 13;
+			this.label4.Text = "Nº Factura";
+			// 
+			// txtInvoiceNumber
+			// 
+			this.txtInvoiceNumber.Location = new System.Drawing.Point(121, 73);
+			this.txtInvoiceNumber.Name = "txtInvoiceNumber";
+			this.txtInvoiceNumber.Size = new System.Drawing.Size(201, 22);
+			this.txtInvoiceNumber.TabIndex = 14;
+			// 
+			// numericUpDown1
+			// 
+			this.numericUpDown1.Location = new System.Drawing.Point(371, 98);
+			this.numericUpDown1.Name = "numericUpDown1";
+			this.numericUpDown1.Size = new System.Drawing.Size(60, 22);
+			this.numericUpDown1.TabIndex = 16;
+			// 
+			// dgv
+			// 
+			this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgv.Location = new System.Drawing.Point(13, 131);
+			this.dgv.Name = "dgv";
+			this.dgv.RowHeadersWidth = 51;
+			this.dgv.RowTemplate.Height = 24;
+			this.dgv.Size = new System.Drawing.Size(542, 150);
+			this.dgv.TabIndex = 17;
+			// 
 			// FrmCRUD
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.btnCancel;
 			this.ClientSize = new System.Drawing.Size(590, 363);
+			this.Controls.Add(this.dgv);
+			this.Controls.Add(this.numericUpDown1);
+			this.Controls.Add(this.txtInvoiceNumber);
+			this.Controls.Add(this.label4);
+			this.Controls.Add(this.dtpInvoiceDate);
 			this.Controls.Add(this.lblDate);
 			this.Controls.Add(this.lblTitle);
 			this.Controls.Add(this.btnCancel);
@@ -165,26 +181,19 @@
 			this.Controls.Add(this.btnDelete);
 			this.Controls.Add(this.btnUpdate);
 			this.Controls.Add(this.btnSave);
-			this.Controls.Add(this.txtDescription);
-			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
-			this.Controls.Add(this.txtName);
-			this.Controls.Add(this.label1);
 			this.Name = "FrmCRUD";
 			this.Text = "frmStockItem";
 			this.Load += new System.EventHandler(this.FrmCRUDStock_Load);
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
 		}
 
 		#endregion
-
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.TextBox txtName;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox txtDescription;
-		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Button btnSave;
 		private System.Windows.Forms.Button btnUpdate;
 		private System.Windows.Forms.Button btnDelete;
@@ -192,5 +201,10 @@
 		private System.Windows.Forms.Button btnCancel;
 		private System.Windows.Forms.Label lblTitle;
 		private System.Windows.Forms.Label lblDate;
+		private System.Windows.Forms.DateTimePicker dtpInvoiceDate;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.TextBox txtInvoiceNumber;
+		private System.Windows.Forms.NumericUpDown numericUpDown1;
+		private System.Windows.Forms.DataGridView dgv;
 	}
 }

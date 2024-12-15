@@ -21,30 +21,6 @@ namespace Calabria.Stock.Invoices
 			_itemOffset = itemOffset;
 		}
 
-		private List<IList<object>> GetItemData(bool delete = false)
-		{
-			var item = new StockItem
-			{
-				Id = ItemId,
-				Name = txtName.Text.Trim(),
-				Description = txtDescription.Text.Trim(),
-				ItemType = cmbType.Text.Trim()
-			};
-
-			return new List<IList<object>>
-				{
-					new List<object>
-					{
-						delete,
-						delete?DateTime.Now:DateTime.MinValue,
-						item.Id,
-						item.ItemType,
-						item.Name,
-						item.Description
-					}
-				};
-		}
-
 		private void FrmCRUDStock_Load(object sender, EventArgs e)
 		{
 			switch (CRUDState)
@@ -61,13 +37,6 @@ namespace Calabria.Stock.Invoices
 
 			SetUpdateIndex();
 			InitCmbItemType();
-
-			if (_stockItem != null)
-			{
-				txtName.Text = _stockItem.Name;
-				txtDescription.Text = _stockItem.Description;
-				cmbType.Text = _stockItem.ItemType;
-			}
 		}
 
 		private void InitCmbItemType()
@@ -90,7 +59,7 @@ namespace Calabria.Stock.Invoices
 		private void btnSave_Click(object sender, EventArgs e)
 		{
 			MyOwner.sheetConnector.SpreadSheetRange.FirstIndexOffset = int.MinValue;
-			MyOwner.sheetConnector.AppendData(GetItemData());
+			//MyOwner.sheetConnector.AppendData(GetItemData());
 
 			DialogResult = DialogResult.OK;
 			Close();
@@ -98,7 +67,7 @@ namespace Calabria.Stock.Invoices
 
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
-			MyOwner.sheetConnector.UpdateData(GetItemData());
+			//MyOwner.sheetConnector.UpdateData(GetItemData());
 
 			DialogResult = DialogResult.OK;
 			Close();
@@ -106,10 +75,20 @@ namespace Calabria.Stock.Invoices
 
 		private void btnDelete_Click(object sender, EventArgs e)
 		{
-			MyOwner.sheetConnector.DeleteData(GetItemData(true));
+			//MyOwner.sheetConnector.DeleteData(GetItemData(true));
 
 			DialogResult = DialogResult.OK;
 			Close();
+		}
+
+		private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+		{
+
 		}
 	}
 }

@@ -6,6 +6,7 @@ namespace Calabria.Stock
 	public partial class frmMain : BaseForm
 	{
 		private Items.frmList _frmStockItemList;
+		private Invoices.frmList _frmInvoicesItemList;
 		
 
 		public frmMain()
@@ -21,7 +22,8 @@ namespace Calabria.Stock
 
 		private void button2_Click(object sender, EventArgs e)
 		{
-
+			_frmInvoicesItemList= new Invoices.frmList();
+			_frmInvoicesItemList.ShowDialog();
 		}
 	}
 }
