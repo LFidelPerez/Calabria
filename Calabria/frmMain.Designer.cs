@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.button1 = new System.Windows.Forms.Button();
+			this.btnPeople = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// button1
@@ -41,11 +42,22 @@
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.Button1_Click);
 			// 
+			// btnPeople
+			// 
+			this.btnPeople.Location = new System.Drawing.Point(125, 351);
+			this.btnPeople.Name = "btnPeople";
+			this.btnPeople.Size = new System.Drawing.Size(123, 55);
+			this.btnPeople.TabIndex = 1;
+			this.btnPeople.Text = "Personas";
+			this.btnPeople.UseVisualStyleBackColor = true;
+			this.btnPeople.Click += new System.EventHandler(this.btnPeople_Click);
+			// 
 			// frmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.btnPeople);
 			this.Controls.Add(this.button1);
 			this.Name = "frmMain";
 			this.Text = "Form1";
@@ -57,6 +69,7 @@
 		#endregion
 
 		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btnPeople;
 	}
 }
 
