@@ -10,13 +10,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Calabria.Base.Forms.CRUDForm;
 
 namespace Calabria.People
 {
 	public partial class frmList : BaseForm
 	{
 		public readonly SpreadSheetConnector sheetConnector;
-		private FrmCRUDStock _frmStockitem;
+		private frmCRUD _frmCRUD;
 		private int _maxItemId = 1;
 
 		public frmList()
@@ -25,10 +26,21 @@ namespace Calabria.People
 			sheetConnector = new SpreadSheetConnector(
 				sheetName: "Miembros",
 				firstColumn: "A",
-				lastColumn: "K",
+				lastColumn: "O",
 				firstIndexOffset: 2
 			);
 			sheetConnector.ConnectToGoogle();
+		}
+
+		private void btn_add_Click(object sender, EventArgs e)
+		{
+			_frmCRUD = new frmCRUD(CRUDStateEnum.Create, _maxItemId, null);
+			var result = _frmCRUD.ShowDialog(this);
+
+			if (result == DialogResult.OK)
+			{
+				//LoadStockItems();
+			}
 		}
 	}
 }

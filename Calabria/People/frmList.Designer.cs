@@ -35,18 +35,14 @@
 			this.dgvList = new System.Windows.Forms.DataGridView();
 			this.label1 = new System.Windows.Forms.Label();
 			this.view = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.ItemId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Names = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Surnames = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Contacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.emergencyContact = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.birthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.isMember = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-			this.socialFeeExemption = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-			this.discountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -74,11 +70,12 @@
 			this.btn_add.TabIndex = 10;
 			this.btn_add.Text = "Agregar";
 			this.btn_add.UseVisualStyleBackColor = true;
+			this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
 			// 
 			// btnClose
 			// 
 			this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.btnClose.Location = new System.Drawing.Point(1464, 12);
+			this.btnClose.Location = new System.Drawing.Point(978, 12);
 			this.btnClose.Name = "btnClose";
 			this.btnClose.Size = new System.Drawing.Size(117, 56);
 			this.btnClose.TabIndex = 9;
@@ -92,25 +89,21 @@
 			this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.view,
+            this.Edit,
             this.ItemId,
             this.Names,
             this.Surnames,
             this.Age,
-            this.email,
             this.Contacto,
             this.emergencyContact,
-            this.birthday,
-            this.isMember,
-            this.socialFeeExemption,
-            this.discountPercent,
-            this.Edit});
+            this.isMember});
 			this.dgvList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
 			this.dgvList.Location = new System.Drawing.Point(12, 122);
 			this.dgvList.Name = "dgvList";
 			this.dgvList.ReadOnly = true;
 			this.dgvList.RowHeadersWidth = 51;
 			this.dgvList.RowTemplate.Height = 24;
-			this.dgvList.Size = new System.Drawing.Size(1569, 316);
+			this.dgvList.Size = new System.Drawing.Size(1083, 316);
 			this.dgvList.TabIndex = 8;
 			// 
 			// label1
@@ -131,6 +124,16 @@
 			this.view.Name = "view";
 			this.view.ReadOnly = true;
 			this.view.Width = 125;
+			// 
+			// Edit
+			// 
+			this.Edit.HeaderText = "Editar";
+			this.Edit.MinimumWidth = 6;
+			this.Edit.Name = "Edit";
+			this.Edit.ReadOnly = true;
+			this.Edit.Text = "Editar";
+			this.Edit.UseColumnTextForButtonValue = true;
+			this.Edit.Width = 125;
 			// 
 			// ItemId
 			// 
@@ -165,14 +168,6 @@
 			this.Age.ReadOnly = true;
 			this.Age.Width = 125;
 			// 
-			// email
-			// 
-			this.email.HeaderText = "E-Mail";
-			this.email.MinimumWidth = 6;
-			this.email.Name = "email";
-			this.email.ReadOnly = true;
-			this.email.Width = 125;
-			// 
 			// Contacto
 			// 
 			this.Contacto.HeaderText = "Contact";
@@ -189,14 +184,6 @@
 			this.emergencyContact.ReadOnly = true;
 			this.emergencyContact.Width = 125;
 			// 
-			// birthday
-			// 
-			this.birthday.HeaderText = "Fecha de Nacimiento";
-			this.birthday.MinimumWidth = 6;
-			this.birthday.Name = "birthday";
-			this.birthday.ReadOnly = true;
-			this.birthday.Width = 125;
-			// 
 			// isMember
 			// 
 			this.isMember.HeaderText = "Socio";
@@ -207,40 +194,12 @@
 			this.isMember.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
 			this.isMember.Width = 125;
 			// 
-			// socialFeeExemption
-			// 
-			this.socialFeeExemption.HeaderText = "Excento Cuota Social";
-			this.socialFeeExemption.MinimumWidth = 6;
-			this.socialFeeExemption.Name = "socialFeeExemption";
-			this.socialFeeExemption.ReadOnly = true;
-			this.socialFeeExemption.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-			this.socialFeeExemption.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-			this.socialFeeExemption.Width = 125;
-			// 
-			// discountPercent
-			// 
-			this.discountPercent.HeaderText = "% Descuento";
-			this.discountPercent.MinimumWidth = 6;
-			this.discountPercent.Name = "discountPercent";
-			this.discountPercent.ReadOnly = true;
-			this.discountPercent.Width = 125;
-			// 
-			// Edit
-			// 
-			this.Edit.HeaderText = "Editar";
-			this.Edit.MinimumWidth = 6;
-			this.Edit.Name = "Edit";
-			this.Edit.ReadOnly = true;
-			this.Edit.Text = "Editar";
-			this.Edit.UseColumnTextForButtonValue = true;
-			this.Edit.Width = 125;
-			// 
 			// frmList
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.btnClose;
-			this.ClientSize = new System.Drawing.Size(1601, 450);
+			this.ClientSize = new System.Drawing.Size(1119, 450);
 			this.Controls.Add(this.txt_search);
 			this.Controls.Add(this.lbl_search);
 			this.Controls.Add(this.btn_add);
@@ -264,17 +223,13 @@
 		private System.Windows.Forms.DataGridView dgvList;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.DataGridViewButtonColumn view;
+		private System.Windows.Forms.DataGridViewButtonColumn Edit;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ItemId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Names;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Surnames;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Age;
-		private System.Windows.Forms.DataGridViewTextBoxColumn email;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Contacto;
 		private System.Windows.Forms.DataGridViewTextBoxColumn emergencyContact;
-		private System.Windows.Forms.DataGridViewTextBoxColumn birthday;
 		private System.Windows.Forms.DataGridViewCheckBoxColumn isMember;
-		private System.Windows.Forms.DataGridViewCheckBoxColumn socialFeeExemption;
-		private System.Windows.Forms.DataGridViewTextBoxColumn discountPercent;
-		private System.Windows.Forms.DataGridViewButtonColumn Edit;
 	}
 }
