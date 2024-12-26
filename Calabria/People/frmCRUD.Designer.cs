@@ -31,24 +31,28 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.lblNames = new System.Windows.Forms.Label();
 			this.txtNames = new System.Windows.Forms.TextBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.txtSurnames = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
-			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.txtEmail = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
-			this.textBox4 = new System.Windows.Forms.TextBox();
+			this.txtPhoneNumber = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
-			this.textBox5 = new System.Windows.Forms.TextBox();
+			this.txtEmergenciContact = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
-			this.btnOk = new System.Windows.Forms.Button();
+			this.btnSave = new System.Windows.Forms.Button();
 			this.btnCancel = new System.Windows.Forms.Button();
 			this.dtpBirthday = new System.Windows.Forms.DateTimePicker();
-			this.textBox7 = new System.Windows.Forms.TextBox();
-			this.chkboxMember = new System.Windows.Forms.CheckBox();
-			this.chkboxExempt = new System.Windows.Forms.CheckBox();
+			this.txtDiscount = new System.Windows.Forms.TextBox();
+			this.chkMember = new System.Windows.Forms.CheckBox();
+			this.chkExempt = new System.Windows.Forms.CheckBox();
 			this.cmbGender = new System.Windows.Forms.ComboBox();
 			this.label1 = new System.Windows.Forms.Label();
+			this.chkWorkshopper = new System.Windows.Forms.CheckBox();
+			this.dtpAssociateDate = new System.Windows.Forms.DateTimePicker();
+			this.label9 = new System.Windows.Forms.Label();
+			this.btnUpdate = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// label2
@@ -78,12 +82,12 @@
 			this.txtNames.Size = new System.Drawing.Size(100, 22);
 			this.txtNames.TabIndex = 10;
 			// 
-			// textBox2
+			// txtSurnames
 			// 
-			this.textBox2.Location = new System.Drawing.Point(332, 91);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(100, 22);
-			this.textBox2.TabIndex = 12;
+			this.txtSurnames.Location = new System.Drawing.Point(332, 91);
+			this.txtSurnames.Name = "txtSurnames";
+			this.txtSurnames.Size = new System.Drawing.Size(100, 22);
+			this.txtSurnames.TabIndex = 12;
 			// 
 			// label3
 			// 
@@ -94,12 +98,12 @@
 			this.label3.TabIndex = 11;
 			this.label3.Text = "Apellidos";
 			// 
-			// textBox3
+			// txtEmail
 			// 
-			this.textBox3.Location = new System.Drawing.Point(126, 186);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(306, 22);
-			this.textBox3.TabIndex = 14;
+			this.txtEmail.Location = new System.Drawing.Point(126, 186);
+			this.txtEmail.Name = "txtEmail";
+			this.txtEmail.Size = new System.Drawing.Size(306, 22);
+			this.txtEmail.TabIndex = 14;
 			// 
 			// label4
 			// 
@@ -110,12 +114,12 @@
 			this.label4.TabIndex = 13;
 			this.label4.Text = "E-Mail";
 			// 
-			// textBox4
+			// txtPhoneNumber
 			// 
-			this.textBox4.Location = new System.Drawing.Point(126, 232);
-			this.textBox4.Name = "textBox4";
-			this.textBox4.Size = new System.Drawing.Size(100, 22);
-			this.textBox4.TabIndex = 16;
+			this.txtPhoneNumber.Location = new System.Drawing.Point(126, 232);
+			this.txtPhoneNumber.Name = "txtPhoneNumber";
+			this.txtPhoneNumber.Size = new System.Drawing.Size(100, 22);
+			this.txtPhoneNumber.TabIndex = 16;
 			// 
 			// label5
 			// 
@@ -126,12 +130,12 @@
 			this.label5.TabIndex = 15;
 			this.label5.Text = "Telefono";
 			// 
-			// textBox5
+			// txtEmergenciContact
 			// 
-			this.textBox5.Location = new System.Drawing.Point(332, 235);
-			this.textBox5.Name = "textBox5";
-			this.textBox5.Size = new System.Drawing.Size(100, 22);
-			this.textBox5.TabIndex = 18;
+			this.txtEmergenciContact.Location = new System.Drawing.Point(332, 235);
+			this.txtEmergenciContact.Name = "txtEmergenciContact";
+			this.txtEmergenciContact.Size = new System.Drawing.Size(100, 22);
+			this.txtEmergenciContact.TabIndex = 18;
 			// 
 			// label6
 			// 
@@ -160,14 +164,15 @@
 			this.label8.TabIndex = 21;
 			this.label8.Text = "Descuento %";
 			// 
-			// btnOk
+			// btnSave
 			// 
-			this.btnOk.Location = new System.Drawing.Point(12, 447);
-			this.btnOk.Name = "btnOk";
-			this.btnOk.Size = new System.Drawing.Size(104, 40);
-			this.btnOk.TabIndex = 30;
-			this.btnOk.Text = "Aceptar";
-			this.btnOk.UseVisualStyleBackColor = true;
+			this.btnSave.Location = new System.Drawing.Point(12, 447);
+			this.btnSave.Name = "btnSave";
+			this.btnSave.Size = new System.Drawing.Size(104, 40);
+			this.btnSave.TabIndex = 30;
+			this.btnSave.Text = "Agregar";
+			this.btnSave.UseVisualStyleBackColor = true;
+			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 			// 
 			// btnCancel
 			// 
@@ -178,6 +183,7 @@
 			this.btnCancel.TabIndex = 31;
 			this.btnCancel.Text = "Cancelar";
 			this.btnCancel.UseVisualStyleBackColor = true;
+			this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
 			// 
 			// dtpBirthday
 			// 
@@ -186,32 +192,32 @@
 			this.dtpBirthday.Size = new System.Drawing.Size(306, 22);
 			this.dtpBirthday.TabIndex = 32;
 			// 
-			// textBox7
+			// txtDiscount
 			// 
-			this.textBox7.Location = new System.Drawing.Point(126, 333);
-			this.textBox7.Name = "textBox7";
-			this.textBox7.Size = new System.Drawing.Size(100, 22);
-			this.textBox7.TabIndex = 22;
+			this.txtDiscount.Location = new System.Drawing.Point(126, 333);
+			this.txtDiscount.Name = "txtDiscount";
+			this.txtDiscount.Size = new System.Drawing.Size(100, 22);
+			this.txtDiscount.TabIndex = 22;
 			// 
-			// chkboxMember
+			// chkMember
 			// 
-			this.chkboxMember.AutoSize = true;
-			this.chkboxMember.Location = new System.Drawing.Point(144, 287);
-			this.chkboxMember.Name = "chkboxMember";
-			this.chkboxMember.Size = new System.Drawing.Size(64, 20);
-			this.chkboxMember.TabIndex = 26;
-			this.chkboxMember.Text = "Socio";
-			this.chkboxMember.UseVisualStyleBackColor = true;
+			this.chkMember.AutoSize = true;
+			this.chkMember.Location = new System.Drawing.Point(167, 287);
+			this.chkMember.Name = "chkMember";
+			this.chkMember.Size = new System.Drawing.Size(64, 20);
+			this.chkMember.TabIndex = 26;
+			this.chkMember.Text = "Socio";
+			this.chkMember.UseVisualStyleBackColor = true;
 			// 
-			// chkboxExempt
+			// chkExempt
 			// 
-			this.chkboxExempt.AutoSize = true;
-			this.chkboxExempt.Location = new System.Drawing.Point(265, 287);
-			this.chkboxExempt.Name = "chkboxExempt";
-			this.chkboxExempt.Size = new System.Drawing.Size(156, 20);
-			this.chkboxExempt.TabIndex = 27;
-			this.chkboxExempt.Text = "Excento Cuota Social";
-			this.chkboxExempt.UseVisualStyleBackColor = true;
+			this.chkExempt.AutoSize = true;
+			this.chkExempt.Location = new System.Drawing.Point(265, 287);
+			this.chkExempt.Name = "chkExempt";
+			this.chkExempt.Size = new System.Drawing.Size(156, 20);
+			this.chkExempt.TabIndex = 27;
+			this.chkExempt.Text = "Excento Cuota Social";
+			this.chkExempt.UseVisualStyleBackColor = true;
 			// 
 			// cmbGender
 			// 
@@ -234,35 +240,76 @@
 			this.label1.TabIndex = 35;
 			this.label1.Text = "Genero";
 			// 
+			// chkWorkshopper
+			// 
+			this.chkWorkshopper.AutoSize = true;
+			this.chkWorkshopper.Location = new System.Drawing.Point(48, 287);
+			this.chkWorkshopper.Name = "chkWorkshopper";
+			this.chkWorkshopper.Size = new System.Drawing.Size(85, 20);
+			this.chkWorkshopper.TabIndex = 36;
+			this.chkWorkshopper.Text = "Tallerista";
+			this.chkWorkshopper.UseVisualStyleBackColor = true;
+			// 
+			// dtpAssociateDate
+			// 
+			this.dtpAssociateDate.Location = new System.Drawing.Point(126, 377);
+			this.dtpAssociateDate.Name = "dtpAssociateDate";
+			this.dtpAssociateDate.Size = new System.Drawing.Size(306, 22);
+			this.dtpAssociateDate.TabIndex = 38;
+			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.Location = new System.Drawing.Point(45, 367);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(67, 32);
+			this.label9.TabIndex = 37;
+			this.label9.Text = "Fecha de \r\nAsociado";
+			// 
+			// btnUpdate
+			// 
+			this.btnUpdate.Location = new System.Drawing.Point(194, 447);
+			this.btnUpdate.Name = "btnUpdate";
+			this.btnUpdate.Size = new System.Drawing.Size(104, 40);
+			this.btnUpdate.TabIndex = 39;
+			this.btnUpdate.Text = "Modificar";
+			this.btnUpdate.UseVisualStyleBackColor = true;
+			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+			// 
 			// frmCRUD
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.btnCancel;
 			this.ClientSize = new System.Drawing.Size(480, 499);
+			this.Controls.Add(this.btnUpdate);
+			this.Controls.Add(this.dtpAssociateDate);
+			this.Controls.Add(this.label9);
+			this.Controls.Add(this.chkWorkshopper);
 			this.Controls.Add(this.btnCancel);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.btnOk);
+			this.Controls.Add(this.btnSave);
 			this.Controls.Add(this.cmbGender);
 			this.Controls.Add(this.dtpBirthday);
-			this.Controls.Add(this.chkboxExempt);
-			this.Controls.Add(this.chkboxMember);
-			this.Controls.Add(this.textBox7);
+			this.Controls.Add(this.chkExempt);
+			this.Controls.Add(this.chkMember);
+			this.Controls.Add(this.txtDiscount);
 			this.Controls.Add(this.label8);
 			this.Controls.Add(this.label7);
-			this.Controls.Add(this.textBox5);
+			this.Controls.Add(this.txtEmergenciContact);
 			this.Controls.Add(this.label6);
-			this.Controls.Add(this.textBox4);
+			this.Controls.Add(this.txtPhoneNumber);
 			this.Controls.Add(this.label5);
-			this.Controls.Add(this.textBox3);
+			this.Controls.Add(this.txtEmail);
 			this.Controls.Add(this.label4);
-			this.Controls.Add(this.textBox2);
+			this.Controls.Add(this.txtSurnames);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.txtNames);
 			this.Controls.Add(this.lblNames);
 			this.Controls.Add(this.label2);
 			this.Name = "frmCRUD";
 			this.Text = "frmCRUD";
+			this.Load += new System.EventHandler(this.frmCRUD_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -273,23 +320,27 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label lblNames;
 		private System.Windows.Forms.TextBox txtNames;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox txtSurnames;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.TextBox textBox3;
+		private System.Windows.Forms.TextBox txtEmail;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.TextBox textBox4;
+		private System.Windows.Forms.TextBox txtPhoneNumber;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.TextBox textBox5;
+		private System.Windows.Forms.TextBox txtEmergenciContact;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.Button btnOk;
+		private System.Windows.Forms.Button btnSave;
 		private System.Windows.Forms.Button btnCancel;
 		private System.Windows.Forms.DateTimePicker dtpBirthday;
-		private System.Windows.Forms.TextBox textBox7;
-		private System.Windows.Forms.CheckBox chkboxMember;
-		private System.Windows.Forms.CheckBox chkboxExempt;
+		private System.Windows.Forms.TextBox txtDiscount;
+		private System.Windows.Forms.CheckBox chkMember;
+		private System.Windows.Forms.CheckBox chkExempt;
 		private System.Windows.Forms.ComboBox cmbGender;
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.CheckBox chkWorkshopper;
+		private System.Windows.Forms.DateTimePicker dtpAssociateDate;
+		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.Button btnUpdate;
 	}
 }
