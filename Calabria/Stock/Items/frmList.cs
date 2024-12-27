@@ -33,7 +33,7 @@ namespace Calabria.Stock.Items
 
 		private void FrmStockItemList_Load(object sender, EventArgs e)
 		{
-			LoadStockItems();
+			LoadDataList();
 		}
 
 		private void btn_addStockItem_Click(object sender, EventArgs e)
@@ -43,11 +43,11 @@ namespace Calabria.Stock.Items
 
 			if (result == DialogResult.OK)
 			{
-				LoadStockItems();
+				LoadDataList();
 			}
 		}
 
-		private void LoadStockItems()
+		private void LoadDataList()
 		{
 			//var range = "StockItems!A2:D";
 
@@ -116,7 +116,7 @@ namespace Calabria.Stock.Items
 
 				if (result == DialogResult.OK)
 				{
-					LoadStockItems();
+					LoadDataList();
 				}
 			}
 		}

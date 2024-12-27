@@ -28,7 +28,7 @@ namespace Calabria.People
 				Birthday = dtpBirthday.Value,
 				Discount = Helpers.StringExtensions.ParseNullableInt(txtDiscount.Text.Trim()),
 				Email = txtEmail.Text,
-				Gender = cmbGender.SelectedText,
+				Gender = cmbGender.Text,
 				Id = ItemId,
 				IsExcempt = chkExempt.Checked,
 				IsMember = chkMember.Checked,
@@ -39,7 +39,7 @@ namespace Calabria.People
 				Phone = txtPhoneNumber.Text.Trim()
 			};
 
-			return new List<IList<object>>
+			var list = new List<IList<object>>
 				{
 					new List<object>
 					{
@@ -57,9 +57,12 @@ namespace Calabria.People
 						item.Discount,
 						item.Gender,
 						item.DischargeDate,
+						item.AssociateDate,
 						item.IsWorkshopper
 					}
 				};
+
+			return list;
 		}
 
 		public frmCRUD(CRUDStateEnum stateEnum, int itemOffset, Person person) : base(stateEnum)
@@ -76,11 +79,11 @@ namespace Calabria.People
 			{
 				case CRUDStateEnum.Create:
 					ItemId = _itemOffset + 1;
-					btnUpdate.Enabled = false;
+					btnUpdate.Text = "Agregar";
 					break;
 				case CRUDStateEnum.Update:
 					ItemId = (int)_person.Id;
-					btnSave.Enabled = false;
+					btnUpdate.Text = "Modificar";
 					break;
 			}
 
@@ -110,24 +113,27 @@ namespace Calabria.People
 			MyOwner.sheetConnector.SpreadSheetRange.FirstIndexOffset = itemOffset;
 		}
 
-		private void btnSave_Click(object sender, EventArgs e)
-		{
-			MyOwner.sheetConnector.SpreadSheetRange.FirstIndexOffset = int.MinValue;
-			MyOwner.sheetConnector.AppendData(GetItemData());
-
-			DialogResult = DialogResult.OK;
-			Close();
-		}
-
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
-			MyOwner.sheetConnector.UpdateData(GetItemData());
+
+			switch (CRUDState)
+			{
+				case CRUDStateEnum.Create:
+					MyOwner.sheetConnector.SpreadSheetRange.FirstIndexOffset = int.MinValue;
+					MyOwner.sheetConnector.AppendData(GetItemData());
+					break;
+				case CRUDStateEnum.Update:
+					MyOwner.sheetConnector.UpdateData(GetItemData());
+					break;
+				default:
+					break;
+			}
 
 			DialogResult = DialogResult.OK;
 			Close();
 		}
 
-		private void btnCancel_Click(object sender, EventArgs e)
+		private void btnDelete_Click(object sender, EventArgs e)
 		{
 			MyOwner.sheetConnector.DeleteData(GetItemData(true));
 

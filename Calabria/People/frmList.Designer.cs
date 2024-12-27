@@ -33,9 +33,6 @@
 			this.btn_add = new System.Windows.Forms.Button();
 			this.btnClose = new System.Windows.Forms.Button();
 			this.dgvList = new System.Windows.Forms.DataGridView();
-			this.label1 = new System.Windows.Forms.Label();
-			this.view = new System.Windows.Forms.DataGridViewButtonColumn();
-			this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.ItemId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Names = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Surnames = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +40,9 @@
 			this.Contacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.emergencyContact = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.isMember = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+			this.view = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.label1 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -81,6 +81,7 @@
 			this.btnClose.TabIndex = 9;
 			this.btnClose.Text = "Cerrar";
 			this.btnClose.UseVisualStyleBackColor = true;
+			this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
 			// 
 			// dgvList
 			// 
@@ -88,15 +89,15 @@
 			this.dgvList.AllowUserToDeleteRows = false;
 			this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.view,
-            this.Edit,
             this.ItemId,
             this.Names,
             this.Surnames,
             this.Age,
             this.Contacto,
             this.emergencyContact,
-            this.isMember});
+            this.isMember,
+            this.view,
+            this.Edit});
 			this.dgvList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
 			this.dgvList.Location = new System.Drawing.Point(12, 122);
 			this.dgvList.Name = "dgvList";
@@ -105,35 +106,8 @@
 			this.dgvList.RowTemplate.Height = 24;
 			this.dgvList.Size = new System.Drawing.Size(1083, 316);
 			this.dgvList.TabIndex = 8;
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(12, 9);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(289, 39);
-			this.label1.TabIndex = 7;
-			this.label1.Text = "Lista de Personas";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-			// 
-			// view
-			// 
-			this.view.HeaderText = "Ver";
-			this.view.MinimumWidth = 6;
-			this.view.Name = "view";
-			this.view.ReadOnly = true;
-			this.view.Width = 125;
-			// 
-			// Edit
-			// 
-			this.Edit.HeaderText = "Editar";
-			this.Edit.MinimumWidth = 6;
-			this.Edit.Name = "Edit";
-			this.Edit.ReadOnly = true;
-			this.Edit.Text = "Editar";
-			this.Edit.UseColumnTextForButtonValue = true;
-			this.Edit.Width = 125;
+			this.dgvList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
+			this.dgvList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
 			// 
 			// ItemId
 			// 
@@ -194,6 +168,37 @@
 			this.isMember.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
 			this.isMember.Width = 125;
 			// 
+			// view
+			// 
+			this.view.HeaderText = "Ver";
+			this.view.MinimumWidth = 6;
+			this.view.Name = "view";
+			this.view.ReadOnly = true;
+			this.view.Text = "Ver";
+			this.view.UseColumnTextForButtonValue = true;
+			this.view.Width = 125;
+			// 
+			// Edit
+			// 
+			this.Edit.HeaderText = "Editar";
+			this.Edit.MinimumWidth = 6;
+			this.Edit.Name = "Edit";
+			this.Edit.ReadOnly = true;
+			this.Edit.Text = "Editar";
+			this.Edit.UseColumnTextForButtonValue = true;
+			this.Edit.Width = 125;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(12, 9);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(289, 39);
+			this.label1.TabIndex = 7;
+			this.label1.Text = "Lista de Personas";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			// 
 			// frmList
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -208,6 +213,7 @@
 			this.Controls.Add(this.label1);
 			this.Name = "frmList";
 			this.Text = "frmList";
+			this.Load += new System.EventHandler(this.frmList_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -222,8 +228,6 @@
 		private System.Windows.Forms.Button btnClose;
 		private System.Windows.Forms.DataGridView dgvList;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.DataGridViewButtonColumn view;
-		private System.Windows.Forms.DataGridViewButtonColumn Edit;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ItemId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Names;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Surnames;
@@ -231,5 +235,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Contacto;
 		private System.Windows.Forms.DataGridViewTextBoxColumn emergencyContact;
 		private System.Windows.Forms.DataGridViewCheckBoxColumn isMember;
+		private System.Windows.Forms.DataGridViewButtonColumn view;
+		private System.Windows.Forms.DataGridViewButtonColumn Edit;
 	}
 }

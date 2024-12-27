@@ -41,7 +41,7 @@
 			this.label6 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
-			this.btnSave = new System.Windows.Forms.Button();
+			this.btnUpdate = new System.Windows.Forms.Button();
 			this.btnCancel = new System.Windows.Forms.Button();
 			this.dtpBirthday = new System.Windows.Forms.DateTimePicker();
 			this.txtDiscount = new System.Windows.Forms.TextBox();
@@ -52,7 +52,7 @@
 			this.chkWorkshopper = new System.Windows.Forms.CheckBox();
 			this.dtpAssociateDate = new System.Windows.Forms.DateTimePicker();
 			this.label9 = new System.Windows.Forms.Label();
-			this.btnUpdate = new System.Windows.Forms.Button();
+			this.btnDelete = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// label2
@@ -164,15 +164,15 @@
 			this.label8.TabIndex = 21;
 			this.label8.Text = "Descuento %";
 			// 
-			// btnSave
+			// btnUpdate
 			// 
-			this.btnSave.Location = new System.Drawing.Point(12, 447);
-			this.btnSave.Name = "btnSave";
-			this.btnSave.Size = new System.Drawing.Size(104, 40);
-			this.btnSave.TabIndex = 30;
-			this.btnSave.Text = "Agregar";
-			this.btnSave.UseVisualStyleBackColor = true;
-			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+			this.btnUpdate.Location = new System.Drawing.Point(12, 447);
+			this.btnUpdate.Name = "btnUpdate";
+			this.btnUpdate.Size = new System.Drawing.Size(104, 40);
+			this.btnUpdate.TabIndex = 30;
+			this.btnUpdate.Text = "Agregar";
+			this.btnUpdate.UseVisualStyleBackColor = true;
+			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
 			// 
 			// btnCancel
 			// 
@@ -183,7 +183,6 @@
 			this.btnCancel.TabIndex = 31;
 			this.btnCancel.Text = "Cancelar";
 			this.btnCancel.UseVisualStyleBackColor = true;
-			this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
 			// 
 			// dtpBirthday
 			// 
@@ -266,15 +265,15 @@
 			this.label9.TabIndex = 37;
 			this.label9.Text = "Fecha de \r\nAsociado";
 			// 
-			// btnUpdate
+			// btnDelete
 			// 
-			this.btnUpdate.Location = new System.Drawing.Point(194, 447);
-			this.btnUpdate.Name = "btnUpdate";
-			this.btnUpdate.Size = new System.Drawing.Size(104, 40);
-			this.btnUpdate.TabIndex = 39;
-			this.btnUpdate.Text = "Modificar";
-			this.btnUpdate.UseVisualStyleBackColor = true;
-			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+			this.btnDelete.Location = new System.Drawing.Point(194, 447);
+			this.btnDelete.Name = "btnDelete";
+			this.btnDelete.Size = new System.Drawing.Size(104, 40);
+			this.btnDelete.TabIndex = 39;
+			this.btnDelete.Text = "Eliminar";
+			this.btnDelete.UseVisualStyleBackColor = true;
+			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
 			// frmCRUD
 			// 
@@ -282,13 +281,13 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.btnCancel;
 			this.ClientSize = new System.Drawing.Size(480, 499);
-			this.Controls.Add(this.btnUpdate);
+			this.Controls.Add(this.btnDelete);
 			this.Controls.Add(this.dtpAssociateDate);
 			this.Controls.Add(this.label9);
 			this.Controls.Add(this.chkWorkshopper);
 			this.Controls.Add(this.btnCancel);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.btnSave);
+			this.Controls.Add(this.btnUpdate);
 			this.Controls.Add(this.cmbGender);
 			this.Controls.Add(this.dtpBirthday);
 			this.Controls.Add(this.chkExempt);
@@ -330,7 +329,6 @@
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.Button btnSave;
 		private System.Windows.Forms.Button btnCancel;
 		private System.Windows.Forms.DateTimePicker dtpBirthday;
 		private System.Windows.Forms.TextBox txtDiscount;
@@ -342,5 +340,6 @@
 		private System.Windows.Forms.DateTimePicker dtpAssociateDate;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.Button btnUpdate;
+		private System.Windows.Forms.Button btnDelete;
 	}
 }
