@@ -88,11 +88,10 @@ namespace Calabria.People
 					Birthday = ObjectTypeCast.ToDateTime(item[8]),
 					IsMember = ObjectTypeCast.ToBool(item[9]),
 					IsExcempt = ObjectTypeCast.ToBool(item[10]),
-					Discount = ObjectTypeCast.ToInt(item[11]),
-					Gender = item[12].ToString(),
-					DischargeDate = ObjectTypeCast.ToDateTime(item[13]),
-					AssociateDate = ObjectTypeCast.ToDateTime(item[14]),
-					IsWorkshopper = ObjectTypeCast.ToBool(item[15])
+					Gender = item[11].ToString(),
+					DischargeDate = ObjectTypeCast.ToDateTime(item[12]),
+					AssociateDate = ObjectTypeCast.ToDateTime(item[13]),
+					IsWorkshopper = ObjectTypeCast.ToBool(item[14])
 				});
 
 				_maxItemId = (int)_dataList[i].Id;

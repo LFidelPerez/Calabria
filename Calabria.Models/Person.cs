@@ -16,7 +16,6 @@ namespace Calabria.Models
 		public int Age { get; set; }
 		public bool IsMember{ get; set; }
 		public bool IsExcempt{ get; set; }
-		public int? Discount { get; set; }
 		public string Gender { get; set; }
 		public DateTime? DischargeDate { get; set; }
 		public DateTime? AssociateDate { get; set; }

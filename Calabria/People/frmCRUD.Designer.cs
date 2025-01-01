@@ -40,11 +40,9 @@
 			this.txtEmergenciContact = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
-			this.label8 = new System.Windows.Forms.Label();
 			this.btnUpdate = new System.Windows.Forms.Button();
 			this.btnCancel = new System.Windows.Forms.Button();
 			this.dtpBirthday = new System.Windows.Forms.DateTimePicker();
-			this.txtDiscount = new System.Windows.Forms.TextBox();
 			this.chkMember = new System.Windows.Forms.CheckBox();
 			this.chkExempt = new System.Windows.Forms.CheckBox();
 			this.cmbGender = new System.Windows.Forms.ComboBox();
@@ -155,15 +153,6 @@
 			this.label7.TabIndex = 19;
 			this.label7.Text = "Fecha de \r\nNacimiento";
 			// 
-			// label8
-			// 
-			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(33, 339);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(87, 16);
-			this.label8.TabIndex = 21;
-			this.label8.Text = "Descuento %";
-			// 
 			// btnUpdate
 			// 
 			this.btnUpdate.Location = new System.Drawing.Point(12, 447);
@@ -190,13 +179,6 @@
 			this.dtpBirthday.Name = "dtpBirthday";
 			this.dtpBirthday.Size = new System.Drawing.Size(306, 22);
 			this.dtpBirthday.TabIndex = 32;
-			// 
-			// txtDiscount
-			// 
-			this.txtDiscount.Location = new System.Drawing.Point(126, 333);
-			this.txtDiscount.Name = "txtDiscount";
-			this.txtDiscount.Size = new System.Drawing.Size(100, 22);
-			this.txtDiscount.TabIndex = 22;
 			// 
 			// chkMember
 			// 
@@ -225,7 +207,7 @@
             "Masculino",
             "Femenino",
             "No Binario"});
-			this.cmbGender.Location = new System.Drawing.Point(311, 331);
+			this.cmbGender.Location = new System.Drawing.Point(205, 330);
 			this.cmbGender.Name = "cmbGender";
 			this.cmbGender.Size = new System.Drawing.Size(121, 24);
 			this.cmbGender.TabIndex = 34;
@@ -233,7 +215,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(246, 339);
+			this.label1.Location = new System.Drawing.Point(140, 334);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(52, 16);
 			this.label1.TabIndex = 35;
@@ -292,8 +274,6 @@
 			this.Controls.Add(this.dtpBirthday);
 			this.Controls.Add(this.chkExempt);
 			this.Controls.Add(this.chkMember);
-			this.Controls.Add(this.txtDiscount);
-			this.Controls.Add(this.label8);
 			this.Controls.Add(this.label7);
 			this.Controls.Add(this.txtEmergenciContact);
 			this.Controls.Add(this.label6);
@@ -328,10 +308,8 @@
 		private System.Windows.Forms.TextBox txtEmergenciContact;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Button btnCancel;
 		private System.Windows.Forms.DateTimePicker dtpBirthday;
-		private System.Windows.Forms.TextBox txtDiscount;
 		private System.Windows.Forms.CheckBox chkMember;
 		private System.Windows.Forms.CheckBox chkExempt;
 		private System.Windows.Forms.ComboBox cmbGender;

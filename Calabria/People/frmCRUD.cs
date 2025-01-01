@@ -26,7 +26,6 @@ namespace Calabria.People
 			{
 				AssociateDate = dtpAssociateDate.Value,
 				Birthday = dtpBirthday.Value,
-				Discount = Helpers.StringExtensions.ParseNullableInt(txtDiscount.Text.Trim()),
 				Email = txtEmail.Text,
 				Gender = cmbGender.Text,
 				Id = ItemId,
@@ -54,7 +53,6 @@ namespace Calabria.People
 						item.Birthday,
 						item.IsMember,
 						item.IsExcempt,
-						item.Discount,
 						item.Gender,
 						item.DischargeDate,
 						item.AssociateDate,
@@ -100,7 +98,6 @@ namespace Calabria.People
 				chkWorkshopper.Checked = _person.IsWorkshopper;
 				chkMember.Checked = _person.IsMember;
 				chkExempt.Checked = _person.IsExcempt;
-				txtDiscount.Text = Convert.ToString(_person.Discount);
 				cmbGender.Text = _person.Gender;
 				dtpAssociateDate.Value = (DateTime)_person.AssociateDate;
 			}
