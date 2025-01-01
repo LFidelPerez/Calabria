@@ -2,14 +2,7 @@
 using Calabria.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace Calabria.People
 {
@@ -80,8 +73,9 @@ namespace Calabria.People
 					btnUpdate.Text = "Agregar";
 					break;
 				case CRUDStateEnum.Update:
-					ItemId = (int)_person.Id;
+					ItemId = _person.Id;
 					btnUpdate.Text = "Modificar";
+					btnDelete.Enabled = true;
 					break;
 			}
 
