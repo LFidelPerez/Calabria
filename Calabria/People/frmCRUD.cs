@@ -27,7 +27,8 @@ namespace Calabria.People
 				Names = txtNames.Text.Trim(),
 				Surnames = txtSurnames.Text.Trim(),
 				EmergencyContact = txtEmergenciContact.Text.Trim(),
-				Phone = txtPhoneNumber.Text.Trim()
+				Phone = txtPhoneNumber.Text.Trim(),
+				BankTransferRef = txtBankTransferRef.Text.Trim(),
 			};
 
 			var list = new List<IList<object>>
@@ -48,7 +49,8 @@ namespace Calabria.People
 						item.Gender,
 						item.DischargeDate,
 						item.AssociateDate,
-						item.IsWorkshopper
+						item.IsWorkshopper,
+						item.BankTransferRef,
 					}
 				};
 
@@ -89,6 +91,7 @@ namespace Calabria.People
 				chkExempt.Checked = _person.IsExcempt;
 				cmbGender.Text = _person.Gender;
 				dtpAssociateDate.Value = (DateTime)_person.AssociateDate;
+				txtBankTransferRef.Text = _person.BankTransferRef;
 			}
 		}
 

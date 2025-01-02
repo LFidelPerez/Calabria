@@ -51,6 +51,8 @@
 			this.dtpAssociateDate = new System.Windows.Forms.DateTimePicker();
 			this.label9 = new System.Windows.Forms.Label();
 			this.btnDelete = new System.Windows.Forms.Button();
+			this.txtBankTransferRef = new System.Windows.Forms.TextBox();
+			this.lbl_BankTransferRef = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// label2
@@ -155,7 +157,7 @@
 			// 
 			// btnUpdate
 			// 
-			this.btnUpdate.Location = new System.Drawing.Point(12, 447);
+			this.btnUpdate.Location = new System.Drawing.Point(15, 506);
 			this.btnUpdate.Name = "btnUpdate";
 			this.btnUpdate.Size = new System.Drawing.Size(104, 40);
 			this.btnUpdate.TabIndex = 30;
@@ -166,7 +168,7 @@
 			// btnCancel
 			// 
 			this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.btnCancel.Location = new System.Drawing.Point(364, 447);
+			this.btnCancel.Location = new System.Drawing.Point(367, 506);
 			this.btnCancel.Name = "btnCancel";
 			this.btnCancel.Size = new System.Drawing.Size(104, 40);
 			this.btnCancel.TabIndex = 31;
@@ -250,7 +252,7 @@
 			// btnDelete
 			// 
 			this.btnDelete.Enabled = false;
-			this.btnDelete.Location = new System.Drawing.Point(194, 447);
+			this.btnDelete.Location = new System.Drawing.Point(197, 506);
 			this.btnDelete.Name = "btnDelete";
 			this.btnDelete.Size = new System.Drawing.Size(104, 40);
 			this.btnDelete.TabIndex = 39;
@@ -258,12 +260,30 @@
 			this.btnDelete.UseVisualStyleBackColor = true;
 			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
+			// txtBankTransferRef
+			// 
+			this.txtBankTransferRef.Location = new System.Drawing.Point(126, 419);
+			this.txtBankTransferRef.Name = "txtBankTransferRef";
+			this.txtBankTransferRef.Size = new System.Drawing.Size(306, 22);
+			this.txtBankTransferRef.TabIndex = 41;
+			// 
+			// lbl_BankTransferRef
+			// 
+			this.lbl_BankTransferRef.AutoSize = true;
+			this.lbl_BankTransferRef.Location = new System.Drawing.Point(75, 425);
+			this.lbl_BankTransferRef.Name = "lbl_BankTransferRef";
+			this.lbl_BankTransferRef.Size = new System.Drawing.Size(35, 16);
+			this.lbl_BankTransferRef.TabIndex = 40;
+			this.lbl_BankTransferRef.Text = "CBU";
+			// 
 			// frmCRUD
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.btnCancel;
-			this.ClientSize = new System.Drawing.Size(480, 499);
+			this.ClientSize = new System.Drawing.Size(480, 558);
+			this.Controls.Add(this.txtBankTransferRef);
+			this.Controls.Add(this.lbl_BankTransferRef);
 			this.Controls.Add(this.btnDelete);
 			this.Controls.Add(this.dtpAssociateDate);
 			this.Controls.Add(this.label9);
@@ -320,5 +340,7 @@
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.Button btnUpdate;
 		private System.Windows.Forms.Button btnDelete;
+		private System.Windows.Forms.TextBox txtBankTransferRef;
+		private System.Windows.Forms.Label lbl_BankTransferRef;
 	}
 }

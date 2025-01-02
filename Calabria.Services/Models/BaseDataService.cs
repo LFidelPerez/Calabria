@@ -1,4 +1,8 @@
-﻿using Calabria.Services.Google;
+﻿using Calabria.Models;
+using Calabria.Services.Google;
+using Google.Apis.Sheets.v4.Data;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 
 namespace Calabria.Services.Models
@@ -7,8 +11,9 @@ namespace Calabria.Services.Models
 	{
 		public List<T> DataList { get { return _dataList; } }
 		public readonly SpreadSheetConnector sheetConnector;
-		internal List<T> _dataList = new List<T>();
 		internal int _maxItemId;
+		private List<T> _dataList = new List<T>();
+		
 
 		public BaseDataService(string sheetName, string firstColumn, string lastColumn, int firstIndexOffset)
 		{
@@ -23,7 +28,12 @@ namespace Calabria.Services.Models
 			sheetConnector.SpreadSheetRange.Init();
 		}
 
-		public global::Google.Apis.Sheets.v4.Data.ValueRange GetDataItems()
+		internal void SetDataList(List<T> list)
+		{
+			_dataList = list;
+		}
+
+		public ValueRange GetDataItems()
 		{
 			_dataList.Clear();
 
@@ -58,7 +68,7 @@ namespace Calabria.Services.Models
 
 		public T FindItemInList(int id)
 		{
-			foreach (var item in _dataList)
+			foreach (var item in DataList)
 			{
 				if (item.Id == id)
 				{

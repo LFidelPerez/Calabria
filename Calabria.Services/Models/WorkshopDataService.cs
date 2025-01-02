@@ -32,7 +32,7 @@ namespace Calabria.Services.Models
 			var list = new List<Workshop>();
 			var valueList = filterArg.Split(' ');
 
-			foreach (var item in _dataList)
+			foreach (var item in DataList)
 			{
 				foreach (var value in valueList)
 				{
