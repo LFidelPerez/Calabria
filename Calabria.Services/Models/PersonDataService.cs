@@ -117,5 +117,30 @@ namespace Calabria.Services.Models
 
 			return null;
 		}
+
+		public List<Person> FilterItemsByNames(string names)
+		{
+
+			var list = new List<Person>();
+			var nameList = names.Split(' ');
+
+			foreach (var item in _dataList)
+			{
+				foreach (var name in nameList)
+				{
+					if (
+						item.Names.ToLower().Contains(name)
+						||
+						item.Surnames.ToLower().Contains(name)
+					)
+					{
+						list.Add(item);
+						break;
+					}
+				}
+			}
+
+			return list;
+		}
 	}
 }

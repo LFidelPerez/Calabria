@@ -33,6 +33,8 @@
 			this.btn_add = new System.Windows.Forms.Button();
 			this.btnClose = new System.Windows.Forms.Button();
 			this.dgvList = new System.Windows.Forms.DataGridView();
+			this.label1 = new System.Windows.Forms.Label();
+			this.btn_Search = new System.Windows.Forms.Button();
 			this.ItemId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Names = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Surnames = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,9 +42,6 @@
 			this.Contacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.emergencyContact = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.isMember = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-			this.view = new System.Windows.Forms.DataGridViewButtonColumn();
-			this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-			this.label1 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -51,8 +50,8 @@
 			this.txt_search.Location = new System.Drawing.Point(158, 68);
 			this.txt_search.Name = "txt_search";
 			this.txt_search.Size = new System.Drawing.Size(242, 22);
-			this.txt_search.TabIndex = 12;
-			this.txt_search.TextChanged += new System.EventHandler(this.txt_search_TextChanged);
+			this.txt_search.TabIndex = 0;
+			this.txt_search.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_search_KeyUp);
 			// 
 			// lbl_search
 			// 
@@ -96,9 +95,7 @@
             this.Age,
             this.Contacto,
             this.emergencyContact,
-            this.isMember,
-            this.view,
-            this.Edit});
+            this.isMember});
 			this.dgvList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
 			this.dgvList.Location = new System.Drawing.Point(12, 122);
 			this.dgvList.Name = "dgvList";
@@ -109,6 +106,27 @@
 			this.dgvList.TabIndex = 8;
 			this.dgvList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
 			this.dgvList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(12, 9);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(289, 39);
+			this.label1.TabIndex = 7;
+			this.label1.Text = "Lista de Personas";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			// 
+			// btn_Search
+			// 
+			this.btn_Search.Location = new System.Drawing.Point(406, 64);
+			this.btn_Search.Name = "btn_Search";
+			this.btn_Search.Size = new System.Drawing.Size(75, 31);
+			this.btn_Search.TabIndex = 13;
+			this.btn_Search.Text = "Buscar";
+			this.btn_Search.UseVisualStyleBackColor = true;
+			this.btn_Search.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// ItemId
 			// 
@@ -169,43 +187,13 @@
 			this.isMember.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
 			this.isMember.Width = 125;
 			// 
-			// view
-			// 
-			this.view.HeaderText = "Ver";
-			this.view.MinimumWidth = 6;
-			this.view.Name = "view";
-			this.view.ReadOnly = true;
-			this.view.Text = "Ver";
-			this.view.UseColumnTextForButtonValue = true;
-			this.view.Width = 125;
-			// 
-			// Edit
-			// 
-			this.Edit.HeaderText = "Editar";
-			this.Edit.MinimumWidth = 6;
-			this.Edit.Name = "Edit";
-			this.Edit.ReadOnly = true;
-			this.Edit.Text = "Editar";
-			this.Edit.UseColumnTextForButtonValue = true;
-			this.Edit.Width = 125;
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(12, 9);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(289, 39);
-			this.label1.TabIndex = 7;
-			this.label1.Text = "Lista de Personas";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-			// 
 			// frmList
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.CancelButton = this.btnClose;
 			this.ClientSize = new System.Drawing.Size(1119, 450);
+			this.Controls.Add(this.btn_Search);
 			this.Controls.Add(this.txt_search);
 			this.Controls.Add(this.lbl_search);
 			this.Controls.Add(this.btn_add);
@@ -229,6 +217,7 @@
 		private System.Windows.Forms.Button btnClose;
 		private System.Windows.Forms.DataGridView dgvList;
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Button btn_Search;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ItemId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Names;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Surnames;
@@ -236,7 +225,5 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Contacto;
 		private System.Windows.Forms.DataGridViewTextBoxColumn emergencyContact;
 		private System.Windows.Forms.DataGridViewCheckBoxColumn isMember;
-		private System.Windows.Forms.DataGridViewButtonColumn view;
-		private System.Windows.Forms.DataGridViewButtonColumn Edit;
 	}
 }

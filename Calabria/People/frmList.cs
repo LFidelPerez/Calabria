@@ -81,11 +81,29 @@ namespace Calabria.People
 			}
 		}
 
-		private void txt_search_TextChanged(object sender, EventArgs e)
+		private void FilterBySearch()
 		{
-			if (sender.ToString().Length > 3)
+			if (txt_search.Text.Length >= 3)
 			{
+				var filteredList = DataService.FilterItemsByNames(txt_search.Text);
+				LoadDataList(filteredList);
+			}
+			else
+			{
+				LoadDataList(null);
+			}
+		}
 
+		private void button1_Click(object sender, EventArgs e)
+		{
+			FilterBySearch();
+		}
+
+		private void txt_search_KeyUp(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+			{
+				FilterBySearch();
 			}
 		}
 	}
