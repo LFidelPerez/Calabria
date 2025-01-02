@@ -11,7 +11,6 @@ namespace Calabria.People
 		private int ItemId { get; set; }
 		private frmList MyOwner { get { return (frmList)Owner; } }
 		private Person _person;
-		private int _itemOffset;
 
 		private List<IList<object>> GetItemData(bool delete = false)
 		{
@@ -56,12 +55,12 @@ namespace Calabria.People
 			return list;
 		}
 
-		public frmCRUD(CRUDStateEnum stateEnum, int itemOffset, Person person) : base(stateEnum)
+		public frmCRUD(CRUDStateEnum stateEnum, Person person) : base(stateEnum)
 		{
 			InitializeComponent();
 
 			_person = person;
-			_itemOffset = itemOffset;
+			if (person !=null) ItemId = _person.Id;
 		}
 
 		private void frmCRUD_Load(object sender, EventArgs e)
@@ -69,18 +68,14 @@ namespace Calabria.People
 			switch (CRUDState)
 			{
 				case CRUDStateEnum.Create:
-					ItemId = _itemOffset + 1;
 					btnUpdate.Text = "Agregar";
 					break;
 				case CRUDStateEnum.Update:
-					ItemId = _person.Id;
 					btnUpdate.Text = "Modificar";
 					btnDelete.Enabled = true;
 					break;
 			}
 
-			SetUpdateIndex();
-			
 			if (_person != null)
 			{
 				txtNames.Text = _person.Names;
@@ -97,24 +92,15 @@ namespace Calabria.People
 			}
 		}
 
-		private void SetUpdateIndex()
-		{
-			var itemOffset = MyOwner.sheetConnector.SpreadSheetRange.InitialFirstIndexOffset + _itemOffset;
-
-			MyOwner.sheetConnector.SpreadSheetRange.FirstIndexOffset = itemOffset;
-		}
-
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
-
 			switch (CRUDState)
 			{
 				case CRUDStateEnum.Create:
-					MyOwner.sheetConnector.SpreadSheetRange.FirstIndexOffset = int.MinValue;
-					MyOwner.sheetConnector.AppendData(GetItemData());
+					MyOwner.DataService.AppendData(GetItemData());
 					break;
 				case CRUDStateEnum.Update:
-					MyOwner.sheetConnector.UpdateData(GetItemData());
+					MyOwner.DataService.UpdateData(GetItemData());
 					break;
 				default:
 					break;
@@ -126,7 +112,7 @@ namespace Calabria.People
 
 		private void btnDelete_Click(object sender, EventArgs e)
 		{
-			MyOwner.sheetConnector.DeleteData(GetItemData(true));
+			MyOwner.DataService.DeleteData(GetItemData(true));
 
 			DialogResult = DialogResult.OK;
 			Close();

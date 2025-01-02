@@ -122,7 +122,7 @@ namespace Calabria.Services.Google
 		public string UpdateData(List<IList<object>> data)
 		{
 			//string _range = "Data-Ingreso!A1:Y";
-			string range = SpreadSheetRange.ToString();
+			string range = SpreadSheetRange.ToString(data[0][2].ToString());
 			string valueInputOption = "RAW";
 
 			// The new values to apply to the spreadsheet.

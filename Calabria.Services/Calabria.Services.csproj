@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Google\SpreadSheetConnector.cs" />
+    <Compile Include="Models\PersonDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +71,10 @@
     <ProjectReference Include="..\Calabria.Helpers\Calabria.Helpers.csproj">
       <Project>{88584874-09D0-458C-B100-A7CB02C77975}</Project>
       <Name>Calabria.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Calabria.Models\Calabria.Models.csproj">
+      <Project>{e7d07cba-d537-4176-be9d-d4307f91ecc5}</Project>
+      <Name>Calabria.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

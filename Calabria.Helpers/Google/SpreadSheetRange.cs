@@ -50,12 +50,27 @@ namespace Calabria.Helpers.Google
 		{
 			StringBuilder sb = new StringBuilder(_range);
 
-			string firstIndexOffset = firstIndexOffset = (FirstIndexOffset != int.MinValue) ? FirstIndexOffset.ToString() : string.Empty;
-			string lastIndexOffset = (LastIndexOffset != int.MinValue) ? LastIndexOffset.ToString() : string.Empty;
+			string firstIndexOffset = FirstIndexOffset.ToString();
+			string lastIndexOffset = "";
 
 			sb.Replace("{sheetName}", SheetName);
 			sb.Replace("{rangeFirstColumn}", FirstColumn);
 			sb.Replace("{firstIndexOffset}", firstIndexOffset);
+			sb.Replace("{rangeLastColumn}", LastColumn);
+			sb.Replace("{lastIndexOffset}", lastIndexOffset);
+
+			return sb.ToString();
+		}
+
+		public string ToString(string firstIndexOffset)
+		{
+			StringBuilder sb = new StringBuilder(_range);
+
+			string lastIndexOffset = "";
+
+			sb.Replace("{sheetName}", SheetName);
+			sb.Replace("{rangeFirstColumn}", FirstColumn);
+			sb.Replace("{firstIndexOffset}", firstIndexOffset.ToString());
 			sb.Replace("{rangeLastColumn}", LastColumn);
 			sb.Replace("{lastIndexOffset}", lastIndexOffset);
 
