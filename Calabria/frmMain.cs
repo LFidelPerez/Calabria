@@ -7,6 +7,7 @@ namespace Calabria
 	{
 		private Stock.frmMain _frmStockMain;
 		private People.frmList _People;
+		private Workshop.frmList _Workshop;
 
 		public frmMain()
 		{
@@ -28,6 +29,12 @@ namespace Calabria
 		{
 			_People = new People.frmList();
 			_People.ShowDialog();
+		}
+
+		private void btn_Workshops_Click(object sender, EventArgs e)
+		{
+			_Workshop = new Workshop.frmList();
+			_Workshop.ShowDialog();
 		}
 	}
 }

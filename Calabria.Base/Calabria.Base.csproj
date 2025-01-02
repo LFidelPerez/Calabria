@@ -55,6 +55,8 @@
     <Compile Include="Forms\CRUDForm.Designer.cs">
       <DependentUpon>CRUDForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="IModel.cs" />
+    <Compile Include="Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -159,6 +159,12 @@
     <Compile Include="Stock\Items\frmList.Designer.cs">
       <DependentUpon>frmList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Workshop\frmList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Workshop\frmList.Designer.cs">
+      <DependentUpon>frmList.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,6 +196,9 @@
       <DependentUpon>frmCRUD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Stock\Items\frmList.resx">
+      <DependentUpon>frmList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workshop\frmList.resx">
       <DependentUpon>frmList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="blazor3.json">

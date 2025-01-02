@@ -30,6 +30,7 @@
 		{
 			this.button1 = new System.Windows.Forms.Button();
 			this.btnPeople = new System.Windows.Forms.Button();
+			this.btn_Workshops = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// button1
@@ -52,11 +53,22 @@
 			this.btnPeople.UseVisualStyleBackColor = true;
 			this.btnPeople.Click += new System.EventHandler(this.btnPeople_Click);
 			// 
+			// btn_Workshops
+			// 
+			this.btn_Workshops.Location = new System.Drawing.Point(366, 351);
+			this.btn_Workshops.Name = "btn_Workshops";
+			this.btn_Workshops.Size = new System.Drawing.Size(123, 55);
+			this.btn_Workshops.TabIndex = 2;
+			this.btn_Workshops.Text = "Talleres";
+			this.btn_Workshops.UseVisualStyleBackColor = true;
+			this.btn_Workshops.Click += new System.EventHandler(this.btn_Workshops_Click);
+			// 
 			// frmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.btn_Workshops);
 			this.Controls.Add(this.btnPeople);
 			this.Controls.Add(this.button1);
 			this.Name = "frmMain";
@@ -70,6 +82,7 @@
 
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button btnPeople;
+		private System.Windows.Forms.Button btn_Workshops;
 	}
 }
 
