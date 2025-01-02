@@ -18,23 +18,12 @@ namespace Calabria.Helpers.Google
 		public int LastIndexOffset { get; set; }
 		public int InitialFirstIndexOffset { get { return _firstIndexOffset; } }
 
-		public SpreadSheetRange() { }
-
 		public SpreadSheetRange(string sheetName, string firstColumn, string lastColumn, int firstIndexOffset)
 		{
 			_sheetName = sheetName;
 			_firstColumn = firstColumn;
 			_lastColumn = lastColumn;
 			_firstIndexOffset = firstIndexOffset;
-		}
-
-		public SpreadSheetRange(string sheetName, string firstColumn, string lastColumn, int firstIndexOffset, int lastIndexOffset)
-		{
-			_sheetName = sheetName;
-			_firstColumn = firstColumn;
-			_lastColumn = lastColumn;
-			_firstIndexOffset = firstIndexOffset;
-			_lastIndexOffset = lastIndexOffset;
 		}
 
 		public void Init()

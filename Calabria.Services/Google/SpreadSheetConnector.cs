@@ -6,7 +6,6 @@ using Google.Apis.Sheets.v4.Data;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 
 namespace Calabria.Services.Google
@@ -29,13 +28,7 @@ namespace Calabria.Services.Google
 				lastColumn: lastColumn,
 				firstIndexOffset: firstIndexOffset
 			);
-		}
-		public SpreadSheetConnector(string applicationName, string spreadsheetId, SheetsService sheetsService)
-		{
-			_applicationName = applicationName;
-			_spreadsheetId = spreadsheetId;
-			_sheetsService = sheetsService;
-		}
+		}		
 
 		public void ConnectToGoogle()
 		{
