@@ -11,7 +11,7 @@ namespace Calabria.People
 	public partial class frmList : BaseForm
 	{
 		private frmCRUD _frmCRUD;
-		internal PersonDataService DataService = new PersonDataService();
+		private readonly PersonDataService _dataService = new PersonDataService();
 
 		public frmList()
 		{
@@ -20,7 +20,7 @@ namespace Calabria.People
 
 		private void btn_add_Click(object sender, EventArgs e)
 		{
-			_frmCRUD = new frmCRUD(CRUDStateEnum.Create, null);
+			_frmCRUD = new frmCRUD(CRUDStateEnum.Create, null, _dataService);
 			var result = _frmCRUD.ShowDialog(this);
 
 			if (result == DialogResult.OK)
@@ -45,7 +45,7 @@ namespace Calabria.People
 
 			if (dataList == null)
 			{
-				dataList = DataService.GetDataListItems();
+				dataList = _dataService.GetDataListItems();
 			}
 
 			foreach (Person item in dataList)
@@ -69,9 +69,9 @@ namespace Calabria.People
 		{
 			var item = dgvList.Rows[e.RowIndex];
 			var id = int.Parse(item.Cells[0].Value.ToString());
-			var person = DataService.FindItemInList(id);
+			var person = _dataService.FindItemInList(id);
 
-			_frmCRUD = new frmCRUD(CRUDStateEnum.Update, person);
+			_frmCRUD = new frmCRUD(CRUDStateEnum.Update, person, _dataService);
 
 			var result = _frmCRUD.ShowDialog(this);
 
@@ -85,7 +85,7 @@ namespace Calabria.People
 		{
 			if (txt_search.Text.Length >= 3)
 			{
-				var filteredList = DataService.FilterItemsByNames(txt_search.Text);
+				var filteredList = _dataService.FilterItemsByNames(txt_search.Text);
 				LoadDataList(filteredList);
 			}
 			else

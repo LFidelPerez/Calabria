@@ -1,5 +1,6 @@
 ﻿using Calabria.Base.Forms;
 using Calabria.Models;
+using Calabria.Services.Models;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -9,8 +10,8 @@ namespace Calabria.People
 	public partial class frmCRUD : CRUDForm
 	{
 		private int ItemId { get; set; }
-		private frmList MyOwner { get { return (frmList)Owner; } }
-		private Person _person;
+		private readonly Person _person;
+		private readonly PersonDataService _dataService;
 
 		private List<IList<object>> GetItemData(bool delete = false)
 		{
@@ -57,10 +58,11 @@ namespace Calabria.People
 			return list;
 		}
 
-		public frmCRUD(CRUDStateEnum stateEnum, Person person) : base(stateEnum)
+		public frmCRUD(CRUDStateEnum stateEnum, Person person, PersonDataService dataService) : base(stateEnum)
 		{
 			InitializeComponent();
 
+			_dataService = dataService;
 			_person = person;
 			if (person !=null) ItemId = _person.Id;
 		}
@@ -100,10 +102,10 @@ namespace Calabria.People
 			switch (CRUDState)
 			{
 				case CRUDStateEnum.Create:
-					MyOwner.DataService.AppendData(GetItemData());
+					_dataService.AppendData(GetItemData());
 					break;
 				case CRUDStateEnum.Update:
-					MyOwner.DataService.UpdateData(GetItemData());
+					_dataService.UpdateData(GetItemData());
 					break;
 				default:
 					break;
@@ -115,7 +117,7 @@ namespace Calabria.People
 
 		private void btnDelete_Click(object sender, EventArgs e)
 		{
-			MyOwner.DataService.DeleteData(GetItemData(true));
+			_dataService.DeleteData(GetItemData(true));
 
 			DialogResult = DialogResult.OK;
 			Close();
