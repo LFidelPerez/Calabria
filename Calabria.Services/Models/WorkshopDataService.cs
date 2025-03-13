@@ -8,7 +8,7 @@ namespace Calabria.Services.Models
 		public WorkshopDataService() : base(
 			sheetName: "Miembros",
 			firstColumn: "A",
-			lastColumn: "P",
+			lastColumn: "M",
 			firstIndexOffset: 2)
 		{
 
