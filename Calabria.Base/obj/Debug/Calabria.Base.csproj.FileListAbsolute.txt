@@ -4,3 +4,9 @@ B:\_Source\repos\Calabria\Calabria.Base\obj\Debug\Calabria.Base.csproj.AssemblyR
 B:\_Source\repos\Calabria\Calabria.Base\obj\Debug\Calabria.Base.csproj.CoreCompileInputs.cache
 B:\_Source\repos\Calabria\Calabria.Base\obj\Debug\Calabria.Base.dll
 B:\_Source\repos\Calabria\Calabria.Base\obj\Debug\Calabria.Base.pdb
+C:\Users\marqu\Source\Repos\Calabria\Calabria.Base\bin\Debug\Calabria.Base.dll
+C:\Users\marqu\Source\Repos\Calabria\Calabria.Base\bin\Debug\Calabria.Base.pdb
+C:\Users\marqu\Source\Repos\Calabria\Calabria.Base\obj\Debug\Calabria.Base.csproj.AssemblyReference.cache
+C:\Users\marqu\Source\Repos\Calabria\Calabria.Base\obj\Debug\Calabria.Base.csproj.CoreCompileInputs.cache
+C:\Users\marqu\Source\Repos\Calabria\Calabria.Base\obj\Debug\Calabria.Base.dll
+C:\Users\marqu\Source\Repos\Calabria\Calabria.Base\obj\Debug\Calabria.Base.pdb

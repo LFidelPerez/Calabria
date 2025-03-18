@@ -115,6 +115,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="People\eliminados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="People\eliminados.Designer.cs">
+      <DependentUpon>eliminados.cs</DependentUpon>
+    </Compile>
     <Compile Include="People\frmCRUD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="People\eliminados.resx">
+      <DependentUpon>eliminados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="People\frmCRUD.resx">
       <DependentUpon>frmCRUD.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,6 +216,26 @@
     <None Include="Calabria_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
+    <None Include="Properties\DataSources\Google.Apis.Download.DownloadProgress.datasource" />
+    <None Include="Properties\DataSources\Google.Apis.Download.IDownloadProgress.datasource" />
+    <None Include="Properties\DataSources\Google.Apis.Download.IMediaDownloader.datasource" />
+    <None Include="Properties\DataSources\Google.Apis.Download.MediaDownloader.datasource" />
+    <None Include="Properties\DataSources\Google.Apis.Requests.BatchRequest+OnResponse`1.datasource" />
+    <None Include="Properties\DataSources\Google.Apis.Requests.BatchRequest.datasource" />
+    <None Include="Properties\DataSources\Google.Apis.Requests.ClientServiceRequest.datasource" />
+    <None Include="Properties\DataSources\Google.Apis.Requests.ClientServiceRequestExtensions.datasource" />
+    <None Include="Properties\DataSources\Google.Apis.Requests.IClientServiceRequest.datasource" />
+    <None Include="Properties\DataSources\Google.Apis.Requests.IDirectResponseSchema.datasource" />
+    <None Include="Properties\DataSources\Google.Apis.Requests.VersionHeaderBuilder.datasource" />
+    <None Include="Properties\DataSources\Google.Apis.Services.BaseClientService.datasource" />
+    <None Include="Properties\DataSources\Google.Apis.Services.IClientService.datasource" />
+    <None Include="Properties\DataSources\Google.Apis.Upload.IUploadProgress.datasource" />
+    <None Include="Properties\DataSources\Google.Apis.Upload.IUploadSessionData.datasource" />
+    <None Include="Properties\DataSources\Google.Apis.Upload.ResumableUpload.datasource" />
+    <None Include="Properties\DataSources\Google.Apis.Upload.ResumableUploadOptions.datasource" />
+    <None Include="Properties\DataSources\Google.Apis.Upload.UploadProgress.datasource" />
+    <None Include="Properties\DataSources\Google.Apis.Util.Store.FileDataStore.datasource" />
+    <None Include="Properties\DataSources\Google.Apis.Util.Store.NullDataStore.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
