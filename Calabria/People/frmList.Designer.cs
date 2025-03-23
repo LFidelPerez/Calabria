@@ -42,35 +42,34 @@
             this.isMember = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Search = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Eliminados = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_search
             // 
-            this.txt_search.Location = new System.Drawing.Point(118, 55);
-            this.txt_search.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_search.Location = new System.Drawing.Point(157, 68);
+            this.txt_search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(182, 20);
+            this.txt_search.Size = new System.Drawing.Size(241, 22);
             this.txt_search.TabIndex = 0;
             this.txt_search.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_search_KeyUp);
             // 
             // lbl_search
             // 
             this.lbl_search.AutoSize = true;
-            this.lbl_search.Location = new System.Drawing.Point(75, 58);
-            this.lbl_search.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_search.Location = new System.Drawing.Point(100, 71);
             this.lbl_search.Name = "lbl_search";
-            this.lbl_search.Size = new System.Drawing.Size(43, 13);
+            this.lbl_search.Size = new System.Drawing.Size(52, 16);
             this.lbl_search.TabIndex = 11;
             this.lbl_search.Text = "Buscar:";
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(9, 52);
-            this.btn_add.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_add.Location = new System.Drawing.Point(12, 64);
+            this.btn_add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(56, 25);
+            this.btn_add.Size = new System.Drawing.Size(75, 31);
             this.btn_add.TabIndex = 10;
             this.btn_add.Text = "Agregar";
             this.btn_add.UseVisualStyleBackColor = true;
@@ -79,10 +78,10 @@
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(734, 10);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Location = new System.Drawing.Point(979, 12);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(88, 46);
+            this.btnClose.Size = new System.Drawing.Size(117, 57);
             this.btnClose.TabIndex = 9;
             this.btnClose.Text = "Cerrar";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -102,13 +101,13 @@
             this.emergencyContact,
             this.isMember});
             this.dgvList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvList.Location = new System.Drawing.Point(9, 99);
-            this.dgvList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvList.Location = new System.Drawing.Point(12, 122);
+            this.dgvList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvList.Name = "dgvList";
             this.dgvList.ReadOnly = true;
             this.dgvList.RowHeadersWidth = 51;
             this.dgvList.RowTemplate.Height = 24;
-            this.dgvList.Size = new System.Drawing.Size(812, 257);
+            this.dgvList.Size = new System.Drawing.Size(1083, 316);
             this.dgvList.TabIndex = 8;
             this.dgvList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
             this.dgvList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
@@ -176,42 +175,42 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 7);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 31);
+            this.label1.Size = new System.Drawing.Size(289, 39);
             this.label1.TabIndex = 7;
             this.label1.Text = "Lista de Personas";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btn_Search
             // 
-            this.btn_Search.Location = new System.Drawing.Point(304, 52);
-            this.btn_Search.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Search.Location = new System.Drawing.Point(405, 64);
+            this.btn_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(56, 25);
+            this.btn_Search.Size = new System.Drawing.Size(75, 31);
             this.btn_Search.TabIndex = 13;
             this.btn_Search.Text = "Buscar";
             this.btn_Search.UseVisualStyleBackColor = true;
             this.btn_Search.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button1
+            // Eliminados
             // 
-            this.button1.Location = new System.Drawing.Point(428, 52);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.Eliminados.Location = new System.Drawing.Point(571, 64);
+            this.Eliminados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Eliminados.Name = "Eliminados";
+            this.Eliminados.Size = new System.Drawing.Size(100, 28);
+            this.Eliminados.TabIndex = 14;
+            this.Eliminados.Text = "eliminados";
+            this.Eliminados.UseVisualStyleBackColor = true;
+            this.Eliminados.Click += new System.EventHandler(this.Eliminados_Click);
             // 
             // frmList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(839, 366);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1119, 450);
+            this.Controls.Add(this.Eliminados);
             this.Controls.Add(this.btn_Search);
             this.Controls.Add(this.txt_search);
             this.Controls.Add(this.lbl_search);
@@ -219,7 +218,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvList);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmList";
             this.Text = "frmList";
             this.Load += new System.EventHandler(this.frmList_Load);
@@ -245,6 +244,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn Contacto;
 		private System.Windows.Forms.DataGridViewTextBoxColumn emergencyContact;
 		private System.Windows.Forms.DataGridViewCheckBoxColumn isMember;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Eliminados;
     }
 }

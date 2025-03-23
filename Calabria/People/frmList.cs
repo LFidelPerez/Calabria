@@ -3,6 +3,7 @@ using Calabria.Models;
 using Calabria.Services.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using static Calabria.Base.Forms.CRUDForm;
 
@@ -12,10 +13,12 @@ namespace Calabria.People
 	{
 		private frmCRUD _frmCRUD;
 		private readonly PersonDataService _dataService = new PersonDataService();
-        private People.eliminados _Eliminados;
-        public frmList()
+		private People.eliminados _Eliminados;
+		public frmList()
 		{
 			InitializeComponent();
+			Eliminados.Click += new EventHandler(Eliminados_Click);
+
 		}
 
 		private void btn_add_Click(object sender, EventArgs e)
@@ -107,10 +110,42 @@ namespace Calabria.People
 			}
 		}
 
-        private void button1_Click_1(object sender, EventArgs e)
+		
+		
+
+        private void Eliminados_Click(object sender, EventArgs e)
         {
-            _Eliminados = new People.eliminados();
-            _Eliminados.ShowDialog();
+            // Limpiar todas las filas del DataGridView
+            dgvList.Rows.Clear();
+
+            //traer las lista de  datos del servicio
+            var dataList = _dataService.GetDataListItems();
+
+
+            // Si la lista de datos sigue siendo nula o está vacía, mostrar un mensaje de información
+            if (dataList == null || dataList.Count == 0)
+            {
+                MessageBox.Show("No se encontraron datos para mostrar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Iterar sobre cada elemento en la lista de datos
+            foreach (Person item in dataList)
+            {
+                // Si el elemento está marcado como eliminado, agregarlo al DataGridView
+                if (item.IsDeleted)
+                {
+                    dgvList.Rows.Add(
+                        item.Id,                // Agregar ID
+                        item.Names,             // Agregar Nombres
+                        item.Surnames,          // Agregar Apellidos
+                        item.Age,               // Agregar Edad
+                        item.Phone,             // Agregar Teléfono
+                        item.EmergencyContact,  // Agregar Contacto de Emergencia
+                        item.IsMember           // Agregar si es Miembro
+                    );
+                }
+            }
         }
     }
 }
