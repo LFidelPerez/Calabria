@@ -12,8 +12,8 @@ namespace Calabria.People
 	{
 		private frmCRUD _frmCRUD;
 		private readonly PersonDataService _dataService = new PersonDataService();
-
-		public frmList()
+        private People.eliminados _Eliminados;
+        public frmList()
 		{
 			InitializeComponent();
 		}
@@ -106,5 +106,11 @@ namespace Calabria.People
 				FilterBySearch();
 			}
 		}
-	}
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            _Eliminados = new People.eliminados();
+            _Eliminados.ShowDialog();
+        }
+    }
 }
