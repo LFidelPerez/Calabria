@@ -31,3 +31,6 @@
 /Calabria.Helpers/obj/Release
 /Calabria.Models/obj/Release
 /Calabria.Services/obj/Release
+/.vs/slnx.sqlite
+/Calabria.Models/bin/Debug/Calabria.Base.dll
+/Calabria.Models/bin/Debug/Calabria.Base.pdb
