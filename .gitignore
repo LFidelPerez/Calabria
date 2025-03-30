@@ -27,3 +27,7 @@
 /.vs/Calabria/v17/ResourceExplorer
 /Calabria.Base/obj/Debug
 /Calabria.Models/obj/Debug/Calabria.Models.csproj.AssemblyReference.cache
+/Calabria.Base/obj/Release
+/Calabria.Helpers/obj/Release
+/Calabria.Models/obj/Release
+/Calabria.Services/obj/Release
